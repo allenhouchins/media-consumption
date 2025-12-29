@@ -201,7 +201,8 @@ function MoviesView({ onNavigate }) {
           let posterUrl = null;
           if (movie.rating_key) {
             // Try local static poster file first (works in both dev and prod)
-            posterUrl = `/data/posters/${movie.rating_key}.jpg`;
+            // Use STATIC_DATA_PATH to account for GitHub Pages base path
+            posterUrl = `${STATIC_DATA_PATH}/posters/${movie.rating_key}.jpg`;
           }
           
           // In development, if we don't have a local file, fallback to backend proxy
@@ -463,7 +464,8 @@ function MoviesView({ onNavigate }) {
                     let posterUrl = null;
                     if (item.rating_key) {
                       // Try local static poster file first (works in both dev and prod)
-                      posterUrl = `/data/posters/${item.rating_key}.jpg`;
+                      // Use STATIC_DATA_PATH to account for GitHub Pages base path
+                      posterUrl = `${STATIC_DATA_PATH}/posters/${item.rating_key}.jpg`;
                     }
                     
                     // In development, if we don't have a local file, fallback to backend proxy

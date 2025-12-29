@@ -234,7 +234,8 @@ function TVShowsView({ onNavigate }) {
           let posterUrl = null;
           if (show.rating_key) {
             // Try local static poster file first (works in both dev and prod)
-            posterUrl = `/data/posters/${show.rating_key}.jpg`;
+            // Use STATIC_DATA_PATH to account for GitHub Pages base path
+            posterUrl = `${STATIC_DATA_PATH}/posters/${show.rating_key}.jpg`;
           }
           
           // In development, if we don't have a local file, fallback to backend proxy
