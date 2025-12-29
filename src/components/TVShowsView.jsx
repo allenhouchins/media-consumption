@@ -254,8 +254,36 @@ function TVShowsView({ onNavigate }) {
           };
         });
 
+        // Deduplicate shows with the same title (merge shows with different rating_keys)
+        // This handles cases where the same show exists multiple times in Plex
+        const deduplicatedShows = [];
+        const showsByTitle = new Map();
+        
+        processedShows.forEach(show => {
+          const normalizedTitle = show.title.toLowerCase().trim();
+          const existing = showsByTitle.get(normalizedTitle);
+          
+          if (!existing) {
+            // First occurrence of this title
+            showsByTitle.set(normalizedTitle, show);
+            deduplicatedShows.push(show);
+          } else {
+            // Merge with existing show - keep the one with more episodes or more recent watch date
+            if (show.episodeCount > existing.episodeCount || 
+                (show.episodeCount === existing.episodeCount && show.watchDate > existing.watchDate)) {
+              // Replace with the better version
+              const index = deduplicatedShows.indexOf(existing);
+              if (index !== -1) {
+                deduplicatedShows[index] = show;
+                showsByTitle.set(normalizedTitle, show);
+              }
+            }
+            // Otherwise keep the existing one and discard this duplicate
+          }
+        });
+        
         // Sort by last watched date (most recent first)
-        processedShows.sort((a, b) => b.watchDate - a.watchDate);
+        deduplicatedShows.sort((a, b) => b.watchDate - a.watchDate);
         
         // Store all episode watch data for accurate time calculations
         // This includes all episodes watched, not just grouped by show
@@ -278,7 +306,7 @@ function TVShowsView({ onNavigate }) {
           });
         
         // Extract unique years
-        const uniqueYears = [...new Set(processedShows.map(s => s.year))].sort((a, b) => b - a);
+        const uniqueYears = [...new Set(deduplicatedShows.map(s => s.year))].sort((a, b) => b - a);
         
         console.log(`Processing took ${(performance.now() - processStart).toFixed(2)}ms`);
         
@@ -292,7 +320,7 @@ function TVShowsView({ onNavigate }) {
         console.log(`Caching took ${(performance.now() - cacheStart).toFixed(2)}ms`);
         
         setAllWatchData(allEpisodeWatches);
-        setShows(processedShows);
+        setShows(deduplicatedShows);
         setYears(uniqueYears);
         
         // Set active tab from URL if valid, otherwise default
