@@ -229,7 +229,9 @@ function TVShowsView({ onNavigate }) {
         
         // Convert map to array and process
         const processedShows = Array.from(showMap.values()).map((show) => {
-          const year = show.lastWatched.getFullYear();
+          const watchYear = show.lastWatched.getFullYear();
+          // Get release year from the first episode (all episodes should have the same year)
+          const releaseYear = show.episodes[0]?.year || null;
           
           let posterUrl = null;
           if (show.rating_key) {
@@ -246,7 +248,8 @@ function TVShowsView({ onNavigate }) {
           return {
             ...show,
             watchDate: show.lastWatched,
-            year,
+            year: watchYear, // Keep watch year for filtering by watch date
+            releaseYear, // Preserve release year for filtering top 3 by release date
             poster: posterUrl,
             thumb: show.thumb, // Keep thumb for fallback poster loading
             duration: show.totalDuration,
@@ -370,32 +373,25 @@ function TVShowsView({ onNavigate }) {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Find the first watch date for each show (by rating_key)
-      // For TV shows, we need to look at episodes and find the first episode watched for each show
-      const firstWatchDates = new Map();
-      allWatchData.forEach(episode => {
-        // Get the show's rating key (grandparent_rating_key is the show, parent_rating_key is the season)
-        const showKey = episode.grandparent_rating_key || episode.parent_rating_key;
-        if (showKey) {
-          const watchYear = episode.watchDate ? episode.watchDate.getFullYear() : new Date(episode.date * 1000).getFullYear();
-          const existing = firstWatchDates.get(showKey);
-          if (!existing || watchYear < existing) {
-            firstWatchDates.set(showKey, watchYear);
-          }
+      // Create a map of release years by rating_key from the processed shows
+      const releaseYearsByRatingKey = new Map();
+      shows.forEach(show => {
+        if (show.rating_key && show.releaseYear) {
+          releaseYearsByRatingKey.set(show.rating_key, show.releaseYear);
         }
       });
       
-      // Filter rankings to only include shows that were FIRST watched in this year, then take top 3
+      // Filter rankings to only include shows that were RELEASED in this year, then take top 3
       const yearRankings = rankings
         .filter(r => {
-          const firstWatchYear = firstWatchDates.get(r.rating_key);
-          return firstWatchYear === targetYear;
+          const releaseYear = releaseYearsByRatingKey.get(r.rating_key);
+          return releaseYear === targetYear;
         })
         .slice(0, 3);
       
       return yearRankings.map(r => r.title);
     };
-  }, [rankings, allWatchData]); // Recompute when rankings or allWatchData change
+  }, [rankings, shows]); // Recompute when rankings or shows change
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function

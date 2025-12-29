@@ -193,7 +193,8 @@ function MoviesView({ onNavigate }) {
           } else {
             watchDate = new Date();
           }
-          const year = watchDate.getFullYear();
+          const watchYear = watchDate.getFullYear();
+          const releaseYear = movie.year || null; // Preserve original release year from Tautulli
           const movieTitle = movie.title || 'Unknown';
           
           // Use the thumb path from Tautulli to construct poster URL
@@ -213,7 +214,8 @@ function MoviesView({ onNavigate }) {
           return {
             ...movie,
             watchDate,
-            year,
+            year: watchYear, // Keep watch year for filtering by watch date
+            releaseYear, // Preserve release year for filtering top 3 by release date
             poster: posterUrl,
             thumb: movie.thumb, // Keep thumb for fallback poster loading
             title: movieTitle,
@@ -322,29 +324,25 @@ function MoviesView({ onNavigate }) {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Find the first watch date for each movie (by rating_key)
-      const firstWatchDates = new Map();
-      allWatchData.forEach(movie => {
-        if (movie.rating_key) {
-          const watchYear = movie.watchDate ? movie.watchDate.getFullYear() : new Date(movie.date * 1000).getFullYear();
-          const existing = firstWatchDates.get(movie.rating_key);
-          if (!existing || watchYear < existing) {
-            firstWatchDates.set(movie.rating_key, watchYear);
-          }
+      // Create a map of release years by rating_key from the deduplicated movies
+      const releaseYearsByRatingKey = new Map();
+      movies.forEach(movie => {
+        if (movie.rating_key && movie.releaseYear) {
+          releaseYearsByRatingKey.set(movie.rating_key, movie.releaseYear);
         }
       });
       
-      // Filter rankings to only include movies that were FIRST watched in this year, then take top 3
+      // Filter rankings to only include movies that were RELEASED in this year, then take top 3
       const yearRankings = rankings
         .filter(r => {
-          const firstWatchYear = firstWatchDates.get(r.rating_key);
-          return firstWatchYear === targetYear;
+          const releaseYear = releaseYearsByRatingKey.get(r.rating_key);
+          return releaseYear === targetYear;
         })
         .slice(0, 3);
       
       return yearRankings;
     };
-  }, [rankings, allWatchData]); // Recompute when rankings or allWatchData change
+  }, [rankings, movies]); // Recompute when rankings or movies change
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function
