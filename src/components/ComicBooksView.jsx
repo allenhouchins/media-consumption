@@ -548,7 +548,7 @@ function ComicBooksView({ onNavigate }) {
                 </div>
               );
             })()}
-            <MovieList movies={getComicsByYear(activeTab)} />
+            <MovieList movies={getComicsByYear(activeTab)} contentType="comics" />
           </>
         )}
       </div>

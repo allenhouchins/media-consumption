@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import './MovieList.css';
 import { API_BASE_URL, IS_DEV } from '../config';
 
-function MovieList({ movies }) {
+function MovieList({ movies, contentType }) {
   const sortedMovies = useMemo(() => {
     if (!movies || movies.length === 0) return [];
     // Sort by watch date (most recent first)
@@ -10,9 +10,14 @@ function MovieList({ movies }) {
   }, [movies]);
 
   if (!movies || movies.length === 0) {
+    const emptyMessage = contentType === 'comics' 
+      ? 'No comic books found for this year.'
+      : contentType === 'tv'
+      ? 'No TV shows found for this year.'
+      : 'No movies found for this year.';
     return (
       <div className="movie-list-empty">
-        <p>No movies found for this year.</p>
+        <p>{emptyMessage}</p>
       </div>
     );
   }
@@ -55,7 +60,7 @@ function MovieList({ movies }) {
             <div className="movie-info">
               <h3 className="movie-title">{movie.title}</h3>
               <p className="movie-date">
-                Watched: {movie.watchDate.toLocaleDateString('en-US', {
+                {contentType === 'comics' ? 'Read' : 'Watched'}: {movie.watchDate.toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
