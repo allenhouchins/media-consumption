@@ -2,7 +2,7 @@
   {
     "rating_key": 2233,
     "title": "Interstellar",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F2233%2Fthumb%2F1763974192",
+    "poster": "/media-consumption/data/posters/2233.jpg",
     "thumb": "/library/metadata/2233/thumb/1763974192",
     "year": 2025
   },
@@ -16,14 +16,14 @@
   {
     "rating_key": 16659,
     "title": "Frankenstein",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F16659%2Fthumb%2F1765785957",
+    "poster": "/media-consumption/data/posters/16659.jpg",
     "thumb": "/library/metadata/16659/thumb/1765785957",
     "year": 2025
   },
   {
     "rating_key": 16146,
     "title": "Weapons",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F16146%2Fthumb%2F1757374234",
+    "poster": "/media-consumption/data/posters/16146.jpg",
     "thumb": "/library/metadata/16146/thumb/1757374234",
     "year": 2025
   },
@@ -37,7 +37,7 @@
   {
     "rating_key": 5646,
     "title": "The Green Knight",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F5646%2Fthumb%2F1764751275",
+    "poster": "/media-consumption/data/posters/5646.jpg",
     "thumb": "/library/metadata/5646/thumb/1764751275",
     "year": 2025
   },
@@ -100,7 +100,7 @@
   {
     "rating_key": 17496,
     "title": "Sisu: Road to Revenge",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F17496%2Fthumb%2F1766017156",
+    "poster": "/media-consumption/data/posters/17496.jpg",
     "thumb": "/library/metadata/17496/thumb/1766017156",
     "year": 2025
   },
@@ -135,14 +135,14 @@
   {
     "rating_key": 11786,
     "title": "The Predator",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F11786%2Fthumb%2F1764836575",
+    "poster": "/media-consumption/data/posters/11786.jpg",
     "thumb": "/library/metadata/11786/thumb/1764836575",
     "year": 2025
   },
   {
     "rating_key": 13717,
     "title": "Violent Night",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F13717%2Fthumb%2F1762167093",
+    "poster": "/media-consumption/data/posters/13717.jpg",
     "thumb": "/library/metadata/13717/thumb/1762167093",
     "year": 2025
   },

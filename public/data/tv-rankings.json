@@ -114,7 +114,7 @@
   {
     "rating_key": 15675,
     "title": "Bajillion Dollar Propertie$",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F15675%2Fthumb%2F1764233580",
+    "poster": "/media-consumption/data/posters/15675.jpg",
     "thumb": "/library/metadata/15675/thumb/1764233580",
     "year": 2025
   },

@@ -12,7 +12,7 @@
 .homepage-content {
   text-align: center;
   padding: 60px 40px;
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -31,10 +31,12 @@
 }
 
 .content-selector {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 30px;
   margin-top: 40px;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .content-button {
@@ -49,6 +51,8 @@
   display: flex;
   align-items: center;
   gap: 25px;
+  flex: 1;
+  min-width: 0;
 }
 
 [data-theme="dark"] .content-button {
@@ -119,6 +123,22 @@
   color: white;
 }
 
+.comics-button:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+  border-color: #ffd700;
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+[data-theme="dark"] .comics-button:hover {
+  background: linear-gradient(135deg, #8b4513 0%, #ffd700 100%);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+.comics-button:hover .button-content h2,
+.comics-button:hover .button-content p {
+  color: white;
+}
+
 @media (max-width: 768px) {
   .homepage-title {
     font-size: 2.5rem;
@@ -129,7 +149,7 @@
   }
 
   .content-selector {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 20px;
   }
 

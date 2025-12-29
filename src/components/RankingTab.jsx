@@ -9,8 +9,8 @@ function RankingTab({ movies, contentType = 'movies' }) {
   const fetchingRef = useRef(false);
   const lastLoadTimeRef = useRef(0);
   
-  // Use different localStorage keys for movies vs TV shows
-  const storageKey = contentType === 'tv' ? 'tvShowRankings' : 'movieRankings';
+  // Use different localStorage keys for movies vs TV shows vs comics
+  const storageKey = contentType === 'tv' ? 'tvShowRankings' : contentType === 'comics' ? 'comicRankings' : 'movieRankings';
   const cacheKey = `rankings-${contentType}`;
 
   useEffect(() => {
@@ -38,7 +38,8 @@ function RankingTab({ movies, contentType = 'movies' }) {
         if (IS_DEV) {
           // In development: load from backend API
           const fetchStart = performance.now();
-          const response = await fetch(`${API_BASE_URL}/rankings/${contentType === 'tv' ? 'tv' : 'movies'}`);
+          const endpoint = contentType === 'tv' ? 'tv' : contentType === 'comics' ? 'comics' : 'movies';
+          const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
           const fetchTime = performance.now() - fetchStart;
           console.log(`[Rankings] API fetch took ${fetchTime.toFixed(2)}ms`);
           
@@ -48,7 +49,8 @@ function RankingTab({ movies, contentType = 'movies' }) {
         } else {
           // In production: load from static JSON file
           const fetchStart = performance.now();
-          const response = await fetch(`${STATIC_DATA_PATH}/${contentType === 'tv' ? 'tv-rankings.json' : 'movie-rankings.json'}`);
+          const filename = contentType === 'tv' ? 'tv-rankings.json' : contentType === 'comics' ? 'comic-rankings.json' : 'movie-rankings.json';
+          const response = await fetch(`${STATIC_DATA_PATH}/${filename}`);
           const fetchTime = performance.now() - fetchStart;
           console.log(`[Rankings] Static file fetch took ${fetchTime.toFixed(2)}ms`);
           
@@ -145,7 +147,7 @@ function RankingTab({ movies, contentType = 'movies' }) {
           </div>
         ) : rankings.length === 0 ? (
           <div className="empty-rankings">
-            <p>No {contentType === 'tv' ? 'TV shows' : 'movies'} ranked yet. Use the Admin tab to start ranking!</p>
+            <p>No {contentType === 'tv' ? 'TV shows' : contentType === 'comics' ? 'comic books' : 'movies'} ranked yet. Use the Admin tab to start ranking!</p>
           </div>
         ) : (
           <div className="rankings-grid read-only">

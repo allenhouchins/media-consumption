@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './components/HomePage';
 import MoviesView from './components/MoviesView';
 import TVShowsView from './components/TVShowsView';
+import ComicBooksView from './components/ComicBooksView';
 import ThemeToggle from './components/ThemeToggle';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const getInitialView = () => {
     const params = new URLSearchParams(window.location.search);
     const view = params.get('view') || 'home';
-    return view === 'movies' || view === 'tv' ? view : 'home';
+    return view === 'movies' || view === 'tv' || view === 'comics' ? view : 'home';
   };
 
   const [currentView, setCurrentView] = useState(getInitialView);
@@ -40,6 +41,7 @@ function App() {
       {currentView === 'home' && <HomePage onSelectContent={handleNavigate} />}
       {currentView === 'movies' && <MoviesView onNavigate={handleNavigate} />}
       {currentView === 'tv' && <TVShowsView onNavigate={handleNavigate} />}
+      {currentView === 'comics' && <ComicBooksView onNavigate={handleNavigate} />}
     </div>
   );
 }

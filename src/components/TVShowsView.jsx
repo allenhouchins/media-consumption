@@ -461,9 +461,14 @@ function TVShowsView({ onNavigate }) {
           <button className="home-button" onClick={() => onNavigate('home')}>
             ← Home
           </button>
-          <button className="switch-button" onClick={() => onNavigate('movies')}>
-            🎬 Movies
-          </button>
+          <div className="nav-buttons">
+            <button className="switch-button" onClick={() => onNavigate('movies')}>
+              🎬 Movies
+            </button>
+            <button className="switch-button" onClick={() => onNavigate('comics')}>
+              📚 Comic Books
+            </button>
+          </div>
         </div>
         <h1>TV Shows</h1>
       </header>

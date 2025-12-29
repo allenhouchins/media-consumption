@@ -23,6 +23,8 @@ const TAUTULLI_URL = process.env.TAUTULLI_URL;
 const API_KEY = process.env.TAUTULLI_API_KEY;
 const PLEX_URL = process.env.PLEX_URL;
 const PLEX_TOKEN = process.env.PLEX_TOKEN;
+const KOMGA_URL = process.env.KOMGA_URL || 'http://192.168.1.100:25600';
+const KOMGA_API_KEY = process.env.KOMGA_API_KEY || 'e4710dd37ec1449cb62b90d52d78de09';
 
 // Validate required environment variables
 if (!TAUTULLI_URL || !API_KEY) {
@@ -209,8 +211,13 @@ mkdirSync(rankingsDir, { recursive: true });
 
 // Get rankings file path
 const getRankingsPath = (contentType) => {
-  const filename = contentType === 'tv' ? 'tv-rankings.json' : 'movie-rankings.json';
-  return join(rankingsDir, filename);
+  if (contentType === 'tv') {
+    return join(rankingsDir, 'tv-rankings.json');
+  } else if (contentType === 'comics') {
+    return join(rankingsDir, 'comic-rankings.json');
+  } else {
+    return join(rankingsDir, 'movie-rankings.json');
+  }
 };
 
 // GET rankings
@@ -264,6 +271,88 @@ app.post('/api/rankings/:contentType', (req, res) => {
   } catch (error) {
     console.error('[POST] Error saving rankings:', error);
     res.status(500).json({ error: 'Failed to save rankings', details: error.message });
+  }
+});
+
+// Komga API endpoints
+// Get books with read progress from Komga
+app.get('/api/komga/read-progress', async (req, res) => {
+  try {
+    // Fetch books and filter for those with read progress
+    const { page = 0, size = 1000 } = req.query;
+    // Komga uses X-API-Key header for authentication
+    const response = await fetch(`${KOMGA_URL}/api/v1/books?page=${page}&size=${size}`, {
+      headers: {
+        'X-API-Key': KOMGA_API_KEY,
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Komga API returned ${response.status}: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    const books = data.content || data || [];
+    // Filter to only books with read progress
+    const booksWithProgress = books.filter(book => book.readProgress !== null);
+    res.json(booksWithProgress);
+  } catch (error) {
+    console.error('Error fetching Komga read progress:', error);
+    res.status(500).json({ error: 'Failed to fetch read progress', details: error.message });
+  }
+});
+
+// Get series from Komga
+app.get('/api/komga/series', async (req, res) => {
+  try {
+    const { page = 0, size = 1000 } = req.query;
+    // Komga uses X-API-Key header for authentication
+    const response = await fetch(`${KOMGA_URL}/api/v1/series?page=${page}&size=${size}`, {
+      headers: {
+        'X-API-Key': KOMGA_API_KEY,
+        'Accept': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Komga API returned ${response.status}: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching Komga series:', error);
+    res.status(500).json({ error: 'Failed to fetch series', details: error.message });
+  }
+});
+
+// Get comic book cover/thumbnail
+app.get('/api/komga/cover/:seriesId', async (req, res) => {
+  try {
+    const { seriesId } = req.params;
+    // Komga uses X-API-Key header for authentication
+    const response = await fetch(`${KOMGA_URL}/api/v1/series/${seriesId}/thumbnail`, {
+      headers: {
+        'X-API-Key': KOMGA_API_KEY
+      }
+    });
+    
+    if (!response.ok) {
+      return res.status(404).json({ error: 'Cover not found' });
+    }
+    
+    const imageBuffer = await response.arrayBuffer();
+    const contentType = response.headers.get('content-type') || 'image/jpeg';
+    
+    res.setHeader('Content-Type', contentType);
+    res.setHeader('Cache-Control', 'public, max-age=31536000');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+    res.send(Buffer.from(imageBuffer));
+  } catch (error) {
+    console.error('Error fetching Komga cover:', error);
+    res.status(500).json({ error: 'Failed to fetch cover' });
   }
 });
 

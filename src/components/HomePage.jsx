@@ -4,8 +4,6 @@ function HomePage({ onSelectContent }) {
   return (
     <div className="homepage">
       <div className="homepage-content">
-        <h1 className="homepage-title">What did Allen watch?</h1>
-        
         <div className="content-selector">
           <button 
             className="content-button movies-button"
@@ -24,6 +22,16 @@ function HomePage({ onSelectContent }) {
             <div className="button-icon">📺</div>
             <div className="button-content">
               <h2>TV Shows</h2>
+            </div>
+          </button>
+          
+          <button 
+            className="content-button comics-button"
+            onClick={() => onSelectContent('comics')}
+          >
+            <div className="button-icon">📚</div>
+            <div className="button-content">
+              <h2>Comic Books</h2>
             </div>
           </button>
         </div>

@@ -12,7 +12,7 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
   const [saveStatus, setSaveStatus] = useState(''); // 'saving', 'saved', 'error'
   
   // Use different localStorage keys for movies vs TV shows
-  const storageKey = contentType === 'tv' ? 'tvShowRankings' : 'movieRankings';
+  const storageKey = contentType === 'tv' ? 'tvShowRankings' : contentType === 'comics' ? 'comicRankings' : 'movieRankings';
 
   const rankingsLoadedRef = React.useRef({});
   const lastContentTypeRef = React.useRef(contentType);
@@ -43,7 +43,8 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
         
         if (IS_DEV) {
           // In development: load from backend API
-          const response = await fetch(`${API_BASE_URL}/rankings/${contentType === 'tv' ? 'tv' : 'movies'}`);
+          const endpoint = contentType === 'tv' ? 'tv' : contentType === 'comics' ? 'comics' : 'movies';
+          const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
           if (response.ok) {
             rankingsData = await response.json();
           } else {
@@ -51,7 +52,8 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
           }
         } else {
           // In production: load from static JSON file
-          const response = await fetch(`${STATIC_DATA_PATH}/${contentType === 'tv' ? 'tv-rankings.json' : 'movie-rankings.json'}`);
+          const filename = contentType === 'tv' ? 'tv-rankings.json' : contentType === 'comics' ? 'comic-rankings.json' : 'movie-rankings.json';
+          const response = await fetch(`${STATIC_DATA_PATH}/${filename}`);
           if (response.ok) {
             rankingsData = await response.json();
           } else {
@@ -234,7 +236,7 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
     setSaveStatus('saving');
     
     try {
-      const endpoint = `${API_BASE_URL}/rankings/${contentType === 'tv' ? 'tv' : 'movies'}`;
+      const endpoint = `${API_BASE_URL}/rankings/${contentType === 'tv' ? 'tv' : contentType === 'comics' ? 'comics' : 'movies'}`;
       console.log('[AdminRankingTab] Saving rankings to:', endpoint);
       console.log('[AdminRankingTab] Rankings to save:', minimalRankings.length, 'items');
       
@@ -306,7 +308,8 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${contentType === 'tv' ? 'tv-rankings.json' : 'movie-rankings.json'}`;
+    const filename = contentType === 'tv' ? 'tv-rankings.json' : contentType === 'comics' ? 'comic-rankings.json' : 'movie-rankings.json';
+    link.download = filename;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -332,7 +335,7 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
         <div className="admin-header-top">
           <div>
             <h2>Admin: Manage Rankings</h2>
-            <p className="admin-subtitle">Drag and drop to reorder rankings. Add or remove {contentType === 'tv' ? 'TV shows' : 'movies'} from my rankings.</p>
+            <p className="admin-subtitle">Drag and drop to reorder rankings. Add or remove {contentType === 'tv' ? 'TV shows' : contentType === 'comics' ? 'comic books' : 'movies'} from my rankings.</p>
           </div>
           <div className="admin-actions">
             {saveStatus === 'saving' && <span className="save-status saving">Saving...</span>}
@@ -361,8 +364,8 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
           <div className="section-header">
             <div className="section-header-top">
               <div>
-                <h3>Ranked {contentType === 'tv' ? 'TV Shows' : 'Movies'} ({rankings.length})</h3>
-                <p className="section-description">Drag {contentType === 'tv' ? 'shows' : 'movies'} to reorder. Click × to remove from rankings.</p>
+                <h3>Ranked {contentType === 'tv' ? 'TV Shows' : contentType === 'comics' ? 'Comic Books' : 'Movies'} ({rankings.length})</h3>
+                <p className="section-description">Drag {contentType === 'tv' ? 'shows' : contentType === 'comics' ? 'comics' : 'movies'} to reorder. Click × to remove from rankings.</p>
               </div>
               <button 
                 className="save-button"
@@ -381,7 +384,7 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
             </div>
           ) : rankings.length === 0 ? (
             <div className="empty-rankings">
-              <p>No {contentType === 'tv' ? 'TV shows' : 'movies'} ranked yet. Add {contentType === 'tv' ? 'shows' : 'movies'} from the unranked section below.</p>
+              <p>No {contentType === 'tv' ? 'TV shows' : contentType === 'comics' ? 'comic books' : 'movies'} ranked yet. Add {contentType === 'tv' ? 'shows' : contentType === 'comics' ? 'comics' : 'movies'} from the unranked section below.</p>
             </div>
           ) : (
             <div className="rankings-list">
@@ -432,13 +435,13 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
 
         <div className="unranked-section">
           <div className="section-header">
-            <h3>Unranked {contentType === 'tv' ? 'TV Shows' : 'Movies'} ({unrankedMovies.length})</h3>
-            <p className="section-description">Click a {contentType === 'tv' ? 'show' : 'movie'} to add it to my rankings.</p>
+            <h3>Unranked {contentType === 'tv' ? 'TV Shows' : contentType === 'comics' ? 'Comic Books' : 'Movies'} ({unrankedMovies.length})</h3>
+            <p className="section-description">Click a {contentType === 'tv' ? 'show' : contentType === 'comics' ? 'comic' : 'movie'} to add it to my rankings.</p>
           </div>
           
           {unrankedMovies.length === 0 ? (
             <div className="empty-unranked">
-              <p>All {contentType === 'tv' ? 'TV shows' : 'movies'} have been ranked!</p>
+              <p>All {contentType === 'tv' ? 'TV shows' : contentType === 'comics' ? 'comic books' : 'movies'} have been ranked!</p>
             </div>
           ) : (
             <div className="unranked-movies">
