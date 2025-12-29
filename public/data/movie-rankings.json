@@ -70,10 +70,10 @@
     "year": 2024
   },
   {
-    "rating_key": 5646,
-    "title": "The Green Knight",
-    "poster": "/media-consumption/data/posters/5646.jpg",
-    "thumb": "/library/metadata/5646/thumb/1764751275",
+    "rating_key": 17240,
+    "title": "Bugonia",
+    "poster": "/media-consumption/data/posters/17240.jpg",
+    "thumb": "/library/metadata/17240/thumb/1764122207",
     "year": 2025
   },
   {
@@ -91,10 +91,10 @@
     "year": 2025
   },
   {
-    "rating_key": 17240,
-    "title": "Bugonia",
-    "poster": "/media-consumption/data/posters/17240.jpg",
-    "thumb": "/library/metadata/17240/thumb/1764122207",
+    "rating_key": 16696,
+    "title": "One Battle After Another",
+    "poster": "/media-consumption/data/posters/16696.jpg",
+    "thumb": "/library/metadata/16696/thumb/1763035614",
     "year": 2025
   },
   {
@@ -102,6 +102,13 @@
     "title": "Superman",
     "poster": "/media-consumption/data/posters/16053.jpg",
     "thumb": "/library/metadata/16053/thumb/1755233332",
+    "year": 2025
+  },
+  {
+    "rating_key": 5646,
+    "title": "The Green Knight",
+    "poster": "/media-consumption/data/posters/5646.jpg",
+    "thumb": "/library/metadata/5646/thumb/1764751275",
     "year": 2025
   },
   {
@@ -117,13 +124,6 @@
     "poster": "/media-consumption/data/posters/5651.jpg",
     "thumb": "/library/metadata/5651/thumb/1732095125",
     "year": 2024
-  },
-  {
-    "rating_key": 16696,
-    "title": "One Battle After Another",
-    "poster": "/media-consumption/data/posters/16696.jpg",
-    "thumb": "/library/metadata/16696/thumb/1763035614",
-    "year": 2025
   },
   {
     "rating_key": 10154,
