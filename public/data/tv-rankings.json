@@ -1,9 +1,128 @@
 [
   {
+    "rating_key": 4762,
+    "title": "True Detective",
+    "poster": "/media-consumption/data/posters/4762.jpg",
+    "thumb": "/library/metadata/4763/thumb/1726789575",
+    "year": 2025
+  },
+  {
+    "rating_key": 1079,
+    "title": "Comedy Bang! Bang!",
+    "poster": "/media-consumption/data/posters/1079.jpg",
+    "thumb": "/library/metadata/1274/thumb/1704868054",
+    "year": 2025
+  },
+  {
+    "rating_key": 10877,
+    "title": "X-Men '97",
+    "poster": "/media-consumption/data/posters/10877.jpg",
+    "thumb": "/library/metadata/10878/thumb/1712128416",
+    "year": 2025
+  },
+  {
+    "rating_key": 7487,
+    "title": "Ask This Old House",
+    "poster": "/media-consumption/data/posters/7487.jpg",
+    "thumb": "/library/metadata/7487/thumb/1730015443",
+    "year": 2024
+  },
+  {
+    "rating_key": 860,
+    "title": "It's Always Sunny in Philadelphia",
+    "poster": "/media-consumption/data/posters/860.jpg",
+    "thumb": "/library/metadata/15573/thumb/1755139119",
+    "year": 2025
+  },
+  {
+    "rating_key": 16285,
+    "title": "Marvel Zombies",
+    "poster": "/media-consumption/data/posters/16285.jpg",
+    "thumb": "/library/metadata/16286/thumb/1758873391",
+    "year": 2025
+  },
+  {
+    "rating_key": 14833,
+    "title": "Daredevil: Born Again",
+    "poster": "/media-consumption/data/posters/14833.jpg",
+    "thumb": "/library/metadata/14834/thumb/1741249322",
+    "year": 2025
+  },
+  {
+    "rating_key": 4276,
+    "title": "I Think You Should Leave with Tim Robinson",
+    "poster": "/media-consumption/data/posters/4276.jpg",
+    "thumb": "/library/metadata/4277/thumb/1705503925",
+    "year": 2025
+  },
+  {
+    "rating_key": 15375,
+    "title": "The Outsider (2020)",
+    "poster": "/media-consumption/data/posters/15375.jpg",
+    "thumb": "/library/metadata/15376/thumb/1750224734",
+    "year": 2025
+  },
+  {
+    "rating_key": 4323,
+    "title": "The Dropout",
+    "poster": "/media-consumption/data/posters/4323.jpg",
+    "thumb": "/library/metadata/4324/thumb/1705506004",
+    "year": 2024
+  },
+  {
+    "rating_key": 1056,
+    "title": "What We Do in the Shadows",
+    "poster": "/media-consumption/data/posters/1056.jpg",
+    "thumb": "/library/metadata/1185/thumb/1704861489",
+    "year": 2025
+  },
+  {
+    "rating_key": 1828,
+    "title": "The Lord of the Rings: The Rings of Power",
+    "poster": "/media-consumption/data/posters/1828.jpg",
+    "thumb": "/library/metadata/12697/thumb/1724915370",
+    "year": 2024
+  },
+  {
+    "rating_key": 1445,
+    "title": "Tim and Eric Awesome Show, Great Job!",
+    "poster": "/media-consumption/data/posters/1445.jpg",
+    "thumb": "/library/metadata/1535/thumb/1726789567",
+    "year": 2025
+  },
+  {
+    "rating_key": 1148,
+    "title": "Echo",
+    "poster": "/media-consumption/data/posters/1148.jpg",
+    "thumb": "/library/metadata/1149/thumb/1705135132",
+    "year": 2024
+  },
+  {
+    "rating_key": 14912,
+    "title": "Very Important People (2023)",
+    "poster": "/media-consumption/data/posters/14912.jpg",
+    "thumb": "/library/metadata/17409/thumb/1765273050",
+    "year": 2025
+  },
+  {
+    "rating_key": 14031,
+    "title": "Arrested Development",
+    "poster": "/media-consumption/data/posters/14031.jpg",
+    "thumb": "/library/metadata/14093/thumb/1735006898",
+    "year": 2025
+  },
+  {
     "rating_key": 15675,
     "title": "Bajillion Dollar Propertie$",
     "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F15675%2Fthumb%2F1764233580",
     "thumb": "/library/metadata/15675/thumb/1764233580",
+    "year": 2025
+  },
+  {
+    "rating_key": 13780,
+    "title": "Good Girls",
+    "poster": "/media-consumption/data/posters/13780.jpg",
+    "thumb": "/library/metadata/13781/thumb/1733711299",
     "year": 2025
   }
 ]

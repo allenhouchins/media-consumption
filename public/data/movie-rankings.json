@@ -7,17 +7,17 @@
     "year": 2025
   },
   {
+    "rating_key": 2228,
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "poster": "/media-consumption/data/posters/2228.jpg",
+    "thumb": "/library/metadata/2228/thumb/1722245792",
+    "year": 2024
+  },
+  {
     "rating_key": 16659,
     "title": "Frankenstein",
     "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F16659%2Fthumb%2F1765785957",
     "thumb": "/library/metadata/16659/thumb/1765785957",
-    "year": 2025
-  },
-  {
-    "rating_key": 5646,
-    "title": "The Green Knight",
-    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F5646%2Fthumb%2F1764751275",
-    "thumb": "/library/metadata/5646/thumb/1764751275",
     "year": 2025
   },
   {
@@ -28,11 +28,109 @@
     "year": 2025
   },
   {
+    "rating_key": 2324,
+    "title": "The Mummy",
+    "poster": "/media-consumption/data/posters/2324.jpg",
+    "thumb": "/library/metadata/2324/thumb/1714290496",
+    "year": 2024
+  },
+  {
+    "rating_key": 5646,
+    "title": "The Green Knight",
+    "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F5646%2Fthumb%2F1764751275",
+    "thumb": "/library/metadata/5646/thumb/1764751275",
+    "year": 2025
+  },
+  {
+    "rating_key": 16578,
+    "title": "Swiss Army Man",
+    "poster": "/media-consumption/data/posters/16578.jpg",
+    "thumb": "/library/metadata/16578/thumb/1762388664",
+    "year": 2025
+  },
+  {
+    "rating_key": 272,
+    "title": "Oppenheimer",
+    "poster": "/media-consumption/data/posters/272.jpg",
+    "thumb": "/library/metadata/272/thumb/1763374205",
+    "year": 2025
+  },
+  {
+    "rating_key": 5651,
+    "title": "Talk to Me",
+    "poster": "/media-consumption/data/posters/5651.jpg",
+    "thumb": "/library/metadata/5651/thumb/1732095125",
+    "year": 2024
+  },
+  {
+    "rating_key": 15277,
+    "title": "Sinners",
+    "poster": "/media-consumption/data/posters/15277.jpg",
+    "thumb": "/library/metadata/15277/thumb/1760002619",
+    "year": 2025
+  },
+  {
+    "rating_key": 9733,
+    "title": "The Holdovers",
+    "poster": "/media-consumption/data/posters/9733.jpg",
+    "thumb": "/library/metadata/9733/thumb/1757407328",
+    "year": 2025
+  },
+  {
+    "rating_key": 16061,
+    "title": "Sisu",
+    "poster": "/media-consumption/data/posters/16061.jpg",
+    "thumb": "/library/metadata/16061/thumb/1755312583",
+    "year": 2025
+  },
+  {
+    "rating_key": 13319,
+    "title": "Don't Breathe",
+    "poster": "/media-consumption/data/posters/13319.jpg",
+    "thumb": "/library/metadata/13319/thumb/1729494198",
+    "year": 2024
+  },
+  {
+    "rating_key": 13871,
+    "title": "Bad Santa",
+    "poster": "/media-consumption/data/posters/13871.jpg",
+    "thumb": "/library/metadata/13871/thumb/1763374621",
+    "year": 2025
+  },
+  {
     "rating_key": 17496,
     "title": "Sisu: Road to Revenge",
     "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F17496%2Fthumb%2F1766017156",
     "thumb": "/library/metadata/17496/thumb/1766017156",
     "year": 2025
+  },
+  {
+    "rating_key": 14312,
+    "title": "Wicked",
+    "poster": "/media-consumption/data/posters/14312.jpg",
+    "thumb": "/library/metadata/14312/thumb/1760779768",
+    "year": 2025
+  },
+  {
+    "rating_key": 17248,
+    "title": "Frailty",
+    "poster": "/media-consumption/data/posters/17248.jpg",
+    "thumb": "/library/metadata/17248/thumb/1764144533",
+    "year": 2025
+  },
+  {
+    "rating_key": 16565,
+    "title": "The Smashing Machine",
+    "poster": "/media-consumption/data/posters/16565.jpg",
+    "thumb": "/library/metadata/16565/thumb/1762351498",
+    "year": 2025
+  },
+  {
+    "rating_key": 1379,
+    "title": "Cocaine Bear",
+    "poster": "/media-consumption/data/posters/1379.jpg",
+    "thumb": "/library/metadata/1379/thumb/1705209890",
+    "year": 2024
   },
   {
     "rating_key": 11786,
@@ -46,6 +144,41 @@
     "title": "Violent Night",
     "poster": "http://localhost:3001/api/poster?thumb=%2Flibrary%2Fmetadata%2F13717%2Fthumb%2F1762167093",
     "thumb": "/library/metadata/13717/thumb/1762167093",
+    "year": 2025
+  },
+  {
+    "rating_key": 13497,
+    "title": "The Apprentice",
+    "poster": "/media-consumption/data/posters/13497.jpg",
+    "thumb": "/library/metadata/13497/thumb/1731553887",
+    "year": 2024
+  },
+  {
+    "rating_key": 17265,
+    "title": "Last Christmas",
+    "poster": "/media-consumption/data/posters/17265.jpg",
+    "thumb": "/library/metadata/17265/thumb/1764144551",
+    "year": 2025
+  },
+  {
+    "rating_key": 11594,
+    "title": "Argylle",
+    "poster": "/media-consumption/data/posters/11594.jpg",
+    "thumb": "/library/metadata/11594/thumb/1714613861",
+    "year": 2024
+  },
+  {
+    "rating_key": 16489,
+    "title": "Devil",
+    "poster": "/media-consumption/data/posters/16489.jpg",
+    "thumb": "/library/metadata/16489/thumb/1761808718",
+    "year": 2025
+  },
+  {
+    "rating_key": 17382,
+    "title": "Cabin Fever",
+    "poster": "/media-consumption/data/posters/17382.jpg",
+    "thumb": "/library/metadata/17382/thumb/1764749146",
     "year": 2025
   }
 ]

@@ -227,19 +227,36 @@ function MoviesView({ onNavigate }) {
         // Store all watch data for accurate time calculations
         setAllWatchData(processedMovies);
         
-        // Remove consecutive duplicates (same movie back-to-back) for display
-        // But keep entries if there are other movies between them
-        const deduplicatedMovies = [];
-        for (let i = 0; i < processedMovies.length; i++) {
-          const current = processedMovies[i];
-          const previous = processedMovies[i - 1];
-          
-          // If this is the first movie, or if it's different from the previous one, add it
-          // If it's the same as the previous one (consecutive duplicate), skip it
-          if (i === 0 || current.rating_key !== previous?.rating_key) {
-            deduplicatedMovies.push(current);
+        // Deduplicate movies by rating_key - keep only the most recent watch for each movie
+        // This handles cases where the same movie was watched multiple times
+        const moviesByRatingKey = new Map();
+        processedMovies.forEach(movie => {
+          const key = movie.rating_key;
+          if (!key) {
+            // If no rating_key, keep it (shouldn't happen, but just in case)
+            return;
           }
-        }
+          
+          const existing = moviesByRatingKey.get(key);
+          if (!existing) {
+            // First occurrence of this movie
+            moviesByRatingKey.set(key, movie);
+          } else {
+            // Keep the one with the most recent watch date
+            // Compare using watchDate (Date object) or fallback to date (number)
+            const movieTime = movie.watchDate ? movie.watchDate.getTime() : (movie.date || 0);
+            const existingTime = existing.watchDate ? existing.watchDate.getTime() : (existing.date || 0);
+            if (movieTime > existingTime) {
+              moviesByRatingKey.set(key, movie);
+            }
+          }
+        });
+        
+        // Convert back to array
+        const deduplicatedMovies = Array.from(moviesByRatingKey.values());
+        
+        // Sort again by watch date (most recent first)
+        deduplicatedMovies.sort((a, b) => b.watchDate - a.watchDate);
         
         // Extract unique years from deduplicated movies
         const uniqueYears = [...new Set(deduplicatedMovies.map(m => m.year))].sort((a, b) => b - a);
