@@ -41,39 +41,74 @@ async function fetchData(mediaType) {
   }
 }
 
-async function downloadPoster(ratingKey, thumbPath, postersDir, errorCount) {
+async function downloadPoster(ratingKey, thumbPath, postersDir) {
   const posterPath = join(postersDir, `${ratingKey}.jpg`);
   
   // Skip if poster already exists
   if (existsSync(posterPath)) {
-    return `/data/posters/${ratingKey}.jpg`;
+    return true; // Success - already exists
   }
   
-  // Try using the local server's poster endpoint (same as dev mode)
-  // This uses the server.js logic which handles Tautulli/Plex properly
+  if (!thumbPath) {
+    return false; // No thumb path available
+  }
+  
+  // Download directly from Tautulli/Plex (same logic as server.js)
   try {
-    const serverUrl = 'http://localhost:3001/api/poster';
-    // Create AbortController for timeout
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-    
-    const response = await fetch(`${serverUrl}?thumb=${encodeURIComponent(thumbPath)}`, {
-      signal: controller.signal
-    });
-    
-    clearTimeout(timeoutId);
-    
-    if (response.ok) {
-      const imageBuffer = await response.arrayBuffer();
-      writeFileSync(posterPath, Buffer.from(imageBuffer));
-      return `/data/posters/${ratingKey}.jpg`;
+    // Try Tautulli's image proxy first (if available)
+    try {
+      const tautulliImageUrl = `${TAUTULLI_URL}/api/v2?apikey=${API_KEY}&cmd=get_pms_image&img=${encodeURIComponent(thumbPath)}`;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const response = await fetch(tautulliImageUrl, {
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (response.ok) {
+        const imageBuffer = await response.arrayBuffer();
+        writeFileSync(posterPath, Buffer.from(imageBuffer));
+        return true;
+      }
+    } catch (err) {
+      // Fall through to Plex direct access
+      if (err.name !== 'AbortError') {
+        console.log(`  Tautulli proxy failed for ${ratingKey}, trying Plex...`);
+      }
     }
-    // Silently skip errors - we'll show summary at the end
+    
+    // Fallback: Try Plex direct access
+    if (PLEX_URL && PLEX_TOKEN && PLEX_TOKEN !== 'your_plex_token_here') {
+      let plexUrl = `${PLEX_URL}${thumbPath}`;
+      if (PLEX_TOKEN) {
+        plexUrl += `?X-Plex-Token=${PLEX_TOKEN}`;
+      }
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const response = await fetch(plexUrl, {
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (response.ok) {
+        const imageBuffer = await response.arrayBuffer();
+        writeFileSync(posterPath, Buffer.from(imageBuffer));
+        return true;
+      }
+    }
   } catch (err) {
     // Silently skip errors (timeouts, network issues, etc.)
+    if (err.name !== 'AbortError') {
+      // Only log non-timeout errors for debugging
+    }
   }
   
-  return null;
+  return false; // Failed to download
 }
 
 async function generateStaticData() {
@@ -114,11 +149,11 @@ async function generateStaticData() {
     for (let i = 0; i < movieEntries.length; i += batchSize) {
       const batch = movieEntries.slice(i, i + batchSize);
       const results = await Promise.all(
-        batch.map(([ratingKey, thumbPath]) => downloadPoster(ratingKey, thumbPath, postersDir, errorCount))
+        batch.map(([ratingKey, thumbPath]) => downloadPoster(ratingKey, thumbPath, postersDir))
       );
       
-      for (const posterUrl of results) {
-        if (posterUrl) {
+      for (const success of results) {
+        if (success) {
           downloaded++;
         } else {
           skipped++;
@@ -128,7 +163,7 @@ async function generateStaticData() {
       
       // Log progress every batch
       if ((i + batchSize) % 50 === 0 || i + batchSize >= movieEntries.length) {
-        console.log(`  Progress: ${Math.min(i + batchSize, movieEntries.length)}/${movieEntries.length} posters processed...`);
+        console.log(`  Progress: ${Math.min(i + batchSize, movieEntries.length)}/${movieEntries.length} posters processed (${downloaded} downloaded, ${skipped} skipped)...`);
       }
     }
     const moviePostersTime = ((Date.now() - moviePostersStart) / 1000).toFixed(2);
@@ -175,11 +210,11 @@ async function generateStaticData() {
     for (let i = 0; i < showEntries.length; i += showBatchSize) {
       const batch = showEntries.slice(i, i + showBatchSize);
       const results = await Promise.all(
-        batch.map(([ratingKey, thumbPath]) => downloadPoster(ratingKey, thumbPath, postersDir, errorCount))
+        batch.map(([ratingKey, thumbPath]) => downloadPoster(ratingKey, thumbPath, postersDir))
       );
       
-      for (const posterUrl of results) {
-        if (posterUrl) {
+      for (const success of results) {
+        if (success) {
           downloaded++;
         } else {
           skipped++;
@@ -189,7 +224,7 @@ async function generateStaticData() {
       
       // Log progress every batch
       if ((i + showBatchSize) % 50 === 0 || i + showBatchSize >= showEntries.length) {
-        console.log(`  Progress: ${Math.min(i + showBatchSize, showEntries.length)}/${showEntries.length} posters processed...`);
+        console.log(`  Progress: ${Math.min(i + showBatchSize, showEntries.length)}/${showEntries.length} posters processed (${downloaded} downloaded, ${skipped} skipped)...`);
       }
     }
     const tvPostersTime = ((Date.now() - tvPostersStart) / 1000).toFixed(2);
