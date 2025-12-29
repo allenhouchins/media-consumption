@@ -13,8 +13,9 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (IS_DEV ? 'http
 // Static data path - points to the public/data directory
 // Account for base URL in production (GitHub Pages)
 // BASE_URL will be '/media-consumption/' in production or '/' in dev
-// Vite's BASE_URL includes trailing slash for non-root paths
-export const STATIC_DATA_PATH = BASE_URL === '/' ? '/data' : `${BASE_URL}data`;
+// Normalize BASE_URL (remove trailing slash if present) then add /data
+const normalizedBase = BASE_URL === '/' ? '' : BASE_URL.endsWith('/') ? BASE_URL.slice(0, -1) : BASE_URL;
+export const STATIC_DATA_PATH = BASE_URL === '/' ? '/data' : `${normalizedBase}/data`;
 
 // Admin password - from environment variable or default to 'admin'
 export const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin';
