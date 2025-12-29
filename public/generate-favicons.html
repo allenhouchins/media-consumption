@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Favicons</title>
+</head>
+<body>
+  <h1>Favicon Generator</h1>
+  <p>Open browser console and run the script below to generate favicon files:</p>
+  <pre>
+const canvas = document.createElement('canvas');
+canvas.width = 64;
+canvas.height = 64;
+const ctx = canvas.getContext('2d');
+
+// Background
+ctx.fillStyle = '#667eea';
+ctx.fillRect(0, 0, 64, 64);
+
+// Draw bomb emoji
+ctx.font = '48px Arial';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('💣', 32, 32);
+
+// Download as PNG
+canvas.toBlob(blob => {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'favicon-64x64.png';
+  a.click();
+});
+
+// For 180x180 (apple touch icon)
+const canvas180 = document.createElement('canvas');
+canvas180.width = 180;
+canvas180.height = 180;
+const ctx180 = canvas180.getContext('2d');
+ctx180.fillStyle = '#667eea';
+ctx180.fillRect(0, 0, 180, 180);
+ctx180.font = '140px Arial';
+ctx180.textAlign = 'center';
+ctx180.textBaseline = 'middle';
+ctx180.fillText('💣', 90, 90);
+canvas180.toBlob(blob => {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'apple-touch-icon.png';
+  a.click();
+});
+  </pre>
+  <script>
+    // Auto-run on load
+    window.addEventListener('load', () => {
+      console.log('Run the code in the pre tag in the console to generate favicons');
+    });
+  </script>
+</body>
+</html>
+

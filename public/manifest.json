@@ -1,0 +1,25 @@
+{
+  "name": "Media Collection",
+  "short_name": "Media Collection",
+  "description": "Track and view your movies, TV shows, and comic books",
+  "start_url": "/media-consumption/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/media-consumption/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/media-consumption/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+
