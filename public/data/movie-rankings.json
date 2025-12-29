@@ -14,10 +14,24 @@
     "year": 2024
   },
   {
-    "rating_key": 16659,
-    "title": "Frankenstein",
-    "poster": "/media-consumption/data/posters/16659.jpg",
-    "thumb": "/library/metadata/16659/thumb/1765785957",
+    "rating_key": 2223,
+    "title": "The Lord of the Rings: The Return of the King",
+    "poster": "/media-consumption/data/posters/2223.jpg",
+    "thumb": "/library/metadata/2223/thumb/1722245791",
+    "year": 2024
+  },
+  {
+    "rating_key": 2272,
+    "title": "Sicario",
+    "poster": "/media-consumption/data/posters/2272.jpg",
+    "thumb": "/library/metadata/2272/thumb/1719559557",
+    "year": 2024
+  },
+  {
+    "rating_key": 11602,
+    "title": "Godzilla Minus One",
+    "poster": "/media-consumption/data/posters/11602.jpg",
+    "thumb": "/library/metadata/11602/thumb/1735553813",
     "year": 2025
   },
   {
@@ -28,10 +42,31 @@
     "year": 2025
   },
   {
+    "rating_key": 2218,
+    "title": "The Lord of the Rings: The Two Towers",
+    "poster": "/media-consumption/data/posters/2218.jpg",
+    "thumb": "/library/metadata/2218/thumb/1722245790",
+    "year": 2024
+  },
+  {
+    "rating_key": 16659,
+    "title": "Frankenstein",
+    "poster": "/media-consumption/data/posters/16659.jpg",
+    "thumb": "/library/metadata/16659/thumb/1765785957",
+    "year": 2025
+  },
+  {
     "rating_key": 2324,
     "title": "The Mummy",
     "poster": "/media-consumption/data/posters/2324.jpg",
     "thumb": "/library/metadata/2324/thumb/1714290496",
+    "year": 2024
+  },
+  {
+    "rating_key": 3338,
+    "title": "The Batman",
+    "poster": "/media-consumption/data/posters/3338.jpg",
+    "thumb": "/library/metadata/3338/thumb/1730194894",
     "year": 2024
   },
   {
@@ -56,11 +91,53 @@
     "year": 2025
   },
   {
+    "rating_key": 17240,
+    "title": "Bugonia",
+    "poster": "/media-consumption/data/posters/17240.jpg",
+    "thumb": "/library/metadata/17240/thumb/1764122207",
+    "year": 2025
+  },
+  {
+    "rating_key": 16053,
+    "title": "Superman",
+    "poster": "/media-consumption/data/posters/16053.jpg",
+    "thumb": "/library/metadata/16053/thumb/1755233332",
+    "year": 2025
+  },
+  {
+    "rating_key": 1628,
+    "title": "The Dark Knight",
+    "poster": "/media-consumption/data/posters/1628.jpg",
+    "thumb": "/library/metadata/1628/thumb/1760779669",
+    "year": 2025
+  },
+  {
     "rating_key": 5651,
     "title": "Talk to Me",
     "poster": "/media-consumption/data/posters/5651.jpg",
     "thumb": "/library/metadata/5651/thumb/1732095125",
     "year": 2024
+  },
+  {
+    "rating_key": 16696,
+    "title": "One Battle After Another",
+    "poster": "/media-consumption/data/posters/16696.jpg",
+    "thumb": "/library/metadata/16696/thumb/1763035614",
+    "year": 2025
+  },
+  {
+    "rating_key": 10154,
+    "title": "Casino",
+    "poster": "/media-consumption/data/posters/10154.jpg",
+    "thumb": "/library/metadata/10154/thumb/1720516269",
+    "year": 2024
+  },
+  {
+    "rating_key": 1428,
+    "title": "Batman Begins",
+    "poster": "/media-consumption/data/posters/1428.jpg",
+    "thumb": "/library/metadata/1428/thumb/1760779667",
+    "year": 2025
   },
   {
     "rating_key": 15277,
@@ -70,10 +147,38 @@
     "year": 2025
   },
   {
-    "rating_key": 9733,
-    "title": "The Holdovers",
-    "poster": "/media-consumption/data/posters/9733.jpg",
-    "thumb": "/library/metadata/9733/thumb/1757407328",
+    "rating_key": 14429,
+    "title": "The Invisible Man",
+    "poster": "/media-consumption/data/posters/14429.jpg",
+    "thumb": "/library/metadata/14429/thumb/1760951360",
+    "year": 2025
+  },
+  {
+    "rating_key": 16039,
+    "title": "Eddington",
+    "poster": "/media-consumption/data/posters/16039.jpg",
+    "thumb": "/library/metadata/16039/thumb/1755678234",
+    "year": 2025
+  },
+  {
+    "rating_key": 14626,
+    "title": "Barbarian",
+    "poster": "/media-consumption/data/posters/14626.jpg",
+    "thumb": "/library/metadata/14626/thumb/1738207570",
+    "year": 2025
+  },
+  {
+    "rating_key": 15687,
+    "title": "28 Years Later",
+    "poster": "/media-consumption/data/posters/15687.jpg",
+    "thumb": "/library/metadata/15687/thumb/1753858931",
+    "year": 2025
+  },
+  {
+    "rating_key": 16456,
+    "title": "The Long Walk",
+    "poster": "/media-consumption/data/posters/16456.jpg",
+    "thumb": "/library/metadata/16456/thumb/1761020931",
     "year": 2025
   },
   {
@@ -82,6 +187,34 @@
     "poster": "/media-consumption/data/posters/16061.jpg",
     "thumb": "/library/metadata/16061/thumb/1755312583",
     "year": 2025
+  },
+  {
+    "rating_key": 14146,
+    "title": "The Substance",
+    "poster": "/media-consumption/data/posters/14146.jpg",
+    "thumb": "/library/metadata/14146/thumb/1735114393",
+    "year": 2024
+  },
+  {
+    "rating_key": 13839,
+    "title": "Heretic",
+    "poster": "/media-consumption/data/posters/13839.jpg",
+    "thumb": "/library/metadata/13839/thumb/1733817982",
+    "year": 2024
+  },
+  {
+    "rating_key": 9733,
+    "title": "The Holdovers",
+    "poster": "/media-consumption/data/posters/9733.jpg",
+    "thumb": "/library/metadata/9733/thumb/1757407328",
+    "year": 2025
+  },
+  {
+    "rating_key": 12825,
+    "title": "What We Do in the Shadows",
+    "poster": "/media-consumption/data/posters/12825.jpg",
+    "thumb": "/library/metadata/12825/thumb/1728462246",
+    "year": 2024
   },
   {
     "rating_key": 13319,
@@ -105,6 +238,20 @@
     "year": 2025
   },
   {
+    "rating_key": 9970,
+    "title": "Old",
+    "poster": "/media-consumption/data/posters/9970.jpg",
+    "thumb": "/library/metadata/9970/thumb/1715239165",
+    "year": 2024
+  },
+  {
+    "rating_key": 13753,
+    "title": "Klaus",
+    "poster": "/media-consumption/data/posters/13753.jpg",
+    "thumb": "/library/metadata/13753/thumb/1762167095",
+    "year": 2025
+  },
+  {
     "rating_key": 14312,
     "title": "Wicked",
     "poster": "/media-consumption/data/posters/14312.jpg",
@@ -112,10 +259,24 @@
     "year": 2025
   },
   {
-    "rating_key": 17248,
-    "title": "Frailty",
-    "poster": "/media-consumption/data/posters/17248.jpg",
-    "thumb": "/library/metadata/17248/thumb/1764144533",
+    "rating_key": 12026,
+    "title": "The Watchers",
+    "poster": "/media-consumption/data/posters/12026.jpg",
+    "thumb": "/library/metadata/12026/thumb/1727602735",
+    "year": 2024
+  },
+  {
+    "rating_key": 16134,
+    "title": "Shin Godzilla",
+    "poster": "/media-consumption/data/posters/16134.jpg",
+    "thumb": "/library/metadata/16134/thumb/1757211766",
+    "year": 2025
+  },
+  {
+    "rating_key": 15416,
+    "title": "Final Destination: Bloodlines",
+    "poster": "/media-consumption/data/posters/15416.jpg",
+    "thumb": "/library/metadata/15416/thumb/1759909247",
     "year": 2025
   },
   {
@@ -126,6 +287,20 @@
     "year": 2025
   },
   {
+    "rating_key": 17248,
+    "title": "Frailty",
+    "poster": "/media-consumption/data/posters/17248.jpg",
+    "thumb": "/library/metadata/17248/thumb/1764144533",
+    "year": 2025
+  },
+  {
+    "rating_key": 14123,
+    "title": "Gladiator II",
+    "poster": "/media-consumption/data/posters/14123.jpg",
+    "thumb": "/library/metadata/14123/thumb/1735027528",
+    "year": 2024
+  },
+  {
     "rating_key": 1379,
     "title": "Cocaine Bear",
     "poster": "/media-consumption/data/posters/1379.jpg",
@@ -133,10 +308,38 @@
     "year": 2024
   },
   {
+    "rating_key": 16372,
+    "title": "Him",
+    "poster": "/media-consumption/data/posters/16372.jpg",
+    "thumb": "/library/metadata/16372/thumb/1759929809",
+    "year": 2025
+  },
+  {
     "rating_key": 11786,
     "title": "The Predator",
     "poster": "/media-consumption/data/posters/11786.jpg",
     "thumb": "/library/metadata/11786/thumb/1764836575",
+    "year": 2025
+  },
+  {
+    "rating_key": 13144,
+    "title": "Beetlejuice Beetlejuice",
+    "poster": "/media-consumption/data/posters/13144.jpg",
+    "thumb": "/library/metadata/13144/thumb/1728361155",
+    "year": 2024
+  },
+  {
+    "rating_key": 16304,
+    "title": "The Toxic Avenger",
+    "poster": "/media-consumption/data/posters/16304.jpg",
+    "thumb": "/library/metadata/16304/thumb/1759209049",
+    "year": 2025
+  },
+  {
+    "rating_key": 16446,
+    "title": "The Descent: Part 2",
+    "poster": "/media-consumption/data/posters/16446.jpg",
+    "thumb": "/library/metadata/16446/thumb/1760758971",
     "year": 2025
   },
   {
@@ -154,6 +357,20 @@
     "year": 2024
   },
   {
+    "rating_key": 16569,
+    "title": "Black Phone 2",
+    "poster": "/media-consumption/data/posters/16569.jpg",
+    "thumb": "/library/metadata/16569/thumb/1762351752",
+    "year": 2025
+  },
+  {
+    "rating_key": 13700,
+    "title": "Kiss Kiss Bang Bang",
+    "poster": "/media-consumption/data/posters/13700.jpg",
+    "thumb": "/library/metadata/13700/thumb/1733041351",
+    "year": 2024
+  },
+  {
     "rating_key": 17265,
     "title": "Last Christmas",
     "poster": "/media-consumption/data/posters/17265.jpg",
@@ -166,6 +383,20 @@
     "poster": "/media-consumption/data/posters/11594.jpg",
     "thumb": "/library/metadata/11594/thumb/1714613861",
     "year": 2024
+  },
+  {
+    "rating_key": 11865,
+    "title": "The Fanatic",
+    "poster": "/media-consumption/data/posters/11865.jpg",
+    "thumb": "/library/metadata/11865/thumb/1717634538",
+    "year": 2024
+  },
+  {
+    "rating_key": 17311,
+    "title": "Shrek the Halls",
+    "poster": "/media-consumption/data/posters/17311.jpg",
+    "thumb": "/library/metadata/17311/thumb/1764136913",
+    "year": 2025
   },
   {
     "rating_key": 16489,
