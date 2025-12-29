@@ -304,18 +304,29 @@ function MoviesView({ onNavigate }) {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Get movies watched in this year
-      const yearMovies = movies.filter(m => m.year === targetYear);
-      const yearMovieKeys = new Set(yearMovies.map(m => m.rating_key));
+      // Find the first watch date for each movie (by rating_key)
+      const firstWatchDates = new Map();
+      allWatchData.forEach(movie => {
+        if (movie.rating_key) {
+          const watchYear = movie.watchDate ? movie.watchDate.getFullYear() : new Date(movie.date * 1000).getFullYear();
+          const existing = firstWatchDates.get(movie.rating_key);
+          if (!existing || watchYear < existing) {
+            firstWatchDates.set(movie.rating_key, watchYear);
+          }
+        }
+      });
       
-      // Filter rankings to only include movies from this year, then take top 3
+      // Filter rankings to only include movies that were FIRST watched in this year, then take top 3
       const yearRankings = rankings
-        .filter(r => yearMovieKeys.has(r.rating_key))
+        .filter(r => {
+          const firstWatchYear = firstWatchDates.get(r.rating_key);
+          return firstWatchYear === targetYear;
+        })
         .slice(0, 3);
       
       return yearRankings;
     };
-  }, [rankings, movies]); // Recompute when rankings or movies change
+  }, [rankings, allWatchData]); // Recompute when rankings or allWatchData change
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function

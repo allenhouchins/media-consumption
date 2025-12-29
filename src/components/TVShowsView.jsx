@@ -341,18 +341,32 @@ function TVShowsView({ onNavigate }) {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Get TV shows watched in this year
-      const yearShows = shows.filter(s => s.year === targetYear);
-      const yearShowKeys = new Set(yearShows.map(s => s.rating_key));
+      // Find the first watch date for each show (by rating_key)
+      // For TV shows, we need to look at episodes and find the first episode watched for each show
+      const firstWatchDates = new Map();
+      allWatchData.forEach(episode => {
+        // Get the show's rating key (grandparent_rating_key is the show, parent_rating_key is the season)
+        const showKey = episode.grandparent_rating_key || episode.parent_rating_key;
+        if (showKey) {
+          const watchYear = episode.watchDate ? episode.watchDate.getFullYear() : new Date(episode.date * 1000).getFullYear();
+          const existing = firstWatchDates.get(showKey);
+          if (!existing || watchYear < existing) {
+            firstWatchDates.set(showKey, watchYear);
+          }
+        }
+      });
       
-      // Filter rankings to only include shows from this year, then take top 3
+      // Filter rankings to only include shows that were FIRST watched in this year, then take top 3
       const yearRankings = rankings
-        .filter(r => yearShowKeys.has(r.rating_key))
+        .filter(r => {
+          const firstWatchYear = firstWatchDates.get(r.rating_key);
+          return firstWatchYear === targetYear;
+        })
         .slice(0, 3);
       
       return yearRankings.map(r => r.title);
     };
-  }, [rankings, shows]); // Recompute when rankings or shows change
+  }, [rankings, allWatchData]); // Recompute when rankings or allWatchData change
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function
