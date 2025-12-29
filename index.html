@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Movie Collection</title>
+    <script>
+      // Apply theme immediately to prevent flash of light mode
+      (function() {
+        // Check localStorage for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        const hasManualSelection = localStorage.getItem('theme-manual') === 'true';
+        
+        let theme;
+        if (savedTheme && hasManualSelection) {
+          // Use saved manual selection
+          theme = savedTheme;
+        } else if (savedTheme) {
+          // Use saved theme (might be from system preference)
+          theme = savedTheme;
+        } else {
+          // Check system preference
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          } else {
+            theme = 'light';
+          }
+        }
+        
+        // Apply theme immediately
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
