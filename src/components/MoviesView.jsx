@@ -324,25 +324,41 @@ function MoviesView({ onNavigate }) {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Create a map of release years by rating_key from the deduplicated movies
+      // Create a map of release years by rating_key from all watch data
+      // This ensures we have release year info for all movies, even if they're not in the current year's list
       const releaseYearsByRatingKey = new Map();
-      movies.forEach(movie => {
-        if (movie.rating_key && movie.releaseYear) {
-          releaseYearsByRatingKey.set(movie.rating_key, movie.releaseYear);
-        }
-      });
+      
+      // Check allWatchData first (has all movies before deduplication)
+      if (allWatchData && allWatchData.length > 0) {
+        allWatchData.forEach(movie => {
+          if (movie.rating_key && movie.releaseYear !== undefined && movie.releaseYear !== null && !releaseYearsByRatingKey.has(movie.rating_key)) {
+            releaseYearsByRatingKey.set(movie.rating_key, movie.releaseYear);
+          }
+        });
+      }
+      
+      // Also check the deduplicated movies list as a fallback
+      if (movies && movies.length > 0) {
+        movies.forEach(movie => {
+          if (movie.rating_key && movie.releaseYear !== undefined && movie.releaseYear !== null && !releaseYearsByRatingKey.has(movie.rating_key)) {
+            releaseYearsByRatingKey.set(movie.rating_key, movie.releaseYear);
+          }
+        });
+      }
       
       // Filter rankings to only include movies that were RELEASED in this year, then take top 3
       const yearRankings = rankings
         .filter(r => {
+          if (!r.rating_key) return false;
           const releaseYear = releaseYearsByRatingKey.get(r.rating_key);
-          return releaseYear === targetYear;
+          // Only include if we found a release year and it matches the target year
+          return releaseYear !== undefined && releaseYear === targetYear;
         })
         .slice(0, 3);
       
       return yearRankings;
     };
-  }, [rankings, movies]); // Recompute when rankings or movies change
+  }, [rankings, movies, allWatchData]); // Recompute when rankings, movies, or allWatchData change
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function
