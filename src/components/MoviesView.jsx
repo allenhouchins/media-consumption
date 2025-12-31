@@ -121,41 +121,86 @@ function MoviesView({ onNavigate }) {
       setLoading(true);
       const startTime = performance.now();
       
-      // Check cache first
+      // Check cache first, but verify it's not stale by checking file metadata
       const cacheKey = IS_DEV ? 'movies-dev' : 'movies-prod';
       const cachedData = await cache.get(cacheKey);
       
+      // If we have cached data, check if the file has been updated since cache was set
       if (cachedData) {
-        console.log(`Using cached data for movies (${cachedData.processed?.length || 0} movies)`);
-        setMovies(cachedData.processed);
-        setAllWatchData(cachedData.allWatchData);
-        setYears(cachedData.years);
-        setLoading(false);
-        
-        // Set active tab from URL if valid, otherwise default
-        const params = new URLSearchParams(window.location.search);
-        const urlTab = params.get('tab');
-        if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
-          // URL tab is valid, keep it
-          setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
-        } else {
-          // No valid URL tab, set default
-          const currentYear = new Date().getFullYear();
-          if (cachedData.years.includes(currentYear)) {
-            setActiveTab('current');
-          } else if (cachedData.years.length > 0) {
-            setActiveTab(cachedData.years[0].toString());
+        try {
+          // Fetch just the metadata to check lastFetched timestamp
+          const metaResponse = await fetch(`${STATIC_DATA_PATH}/movies.json?t=${Date.now()}`);
+          if (metaResponse.ok) {
+            const fileData = await metaResponse.json();
+            const fileLastFetched = fileData._metadata?.lastFetched;
+            const cachedLastFetched = cachedData.lastFetched;
+            
+            // If file is newer than cache, invalidate cache and continue to fetch fresh data
+            if (fileLastFetched && cachedLastFetched && new Date(fileLastFetched) > new Date(cachedLastFetched)) {
+              console.log('File has been updated since cache was set, invalidating cache...');
+              await cache.set(cacheKey, null); // Clear cache
+              // Continue to fetch fresh data below (don't return)
+            } else {
+              // Cache is still valid
+              console.log(`Using cached data for movies (${cachedData.processed?.length || 0} movies)`);
+              setMovies(cachedData.processed);
+              setAllWatchData(cachedData.allWatchData);
+              setYears(cachedData.years);
+              setLoading(false);
+              
+              // Set active tab from URL if valid, otherwise default
+              const params = new URLSearchParams(window.location.search);
+              const urlTab = params.get('tab');
+              if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
+                // URL tab is valid, keep it
+                setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
+              } else {
+                // No valid URL tab, set default
+                const currentYear = new Date().getFullYear();
+                if (cachedData.years.includes(currentYear)) {
+                  setActiveTab('current');
+                } else if (cachedData.years.length > 0) {
+                  setActiveTab(cachedData.years[0].toString());
+                }
+              }
+              console.log(`Movies loaded from cache in ${(performance.now() - startTime).toFixed(2)}ms`);
+              return;
+            }
           }
+        } catch (err) {
+          console.warn('Error checking file metadata, using cache:', err);
+          // If metadata check fails, use cache anyway
+          console.log(`Using cached data for movies (${cachedData.processed?.length || 0} movies)`);
+          setMovies(cachedData.processed);
+          setAllWatchData(cachedData.allWatchData);
+          setYears(cachedData.years);
+          setLoading(false);
+          
+          // Set active tab from URL if valid, otherwise default
+          const params = new URLSearchParams(window.location.search);
+          const urlTab = params.get('tab');
+          if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
+            setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
+          } else {
+            const currentYear = new Date().getFullYear();
+            if (cachedData.years.includes(currentYear)) {
+              setActiveTab('current');
+            } else if (cachedData.years.length > 0) {
+              setActiveTab(cachedData.years[0].toString());
+            }
+          }
+          console.log(`Movies loaded from cache in ${(performance.now() - startTime).toFixed(2)}ms`);
+          return;
         }
-        console.log(`Movies loaded from cache in ${(performance.now() - startTime).toFixed(2)}ms`);
-        return;
       }
       
       console.log('Loading movies from static data file...');
       const fetchStart = performance.now();
       // Always use static JSON files (both dev and production)
       // Run 'npm run fetch-data' to update the data
-      const response = await fetch(`${STATIC_DATA_PATH}/movies.json`);
+      // Add cache-busting query param to ensure fresh data
+      const cacheBuster = `?t=${Date.now()}`;
+      const response = await fetch(`${STATIC_DATA_PATH}/movies.json${cacheBuster}`);
       if (!response.ok) {
         throw new Error(`Failed to load movies data: ${response.status} ${response.statusText}. Please run 'npm run fetch-data' to generate the data files.`);
       }
@@ -267,10 +312,12 @@ function MoviesView({ onNavigate }) {
         
         // Cache the processed data
         const cacheStart = performance.now();
+        const lastFetched = data._metadata?.lastFetched || new Date().toISOString();
         await cache.set(cacheKey, {
           processed: deduplicatedMovies,
           allWatchData: processedMovies,
-          years: uniqueYears
+          years: uniqueYears,
+          lastFetched: lastFetched
         });
         console.log(`Caching took ${(performance.now() - cacheStart).toFixed(2)}ms`);
         

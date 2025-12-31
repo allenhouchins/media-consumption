@@ -165,9 +165,10 @@ async function generateStaticData() {
       const seriesInfo = seriesMap.get(book.seriesId);
       const readProgress = book.readProgress || {};
       
-      // Extract date from readProgress (lastReadAt or completedAt)
-      const readDate = readProgress.lastReadAt || readProgress.completedAt || null;
-      const watchDate = readDate ? new Date(readDate).toISOString() : null;
+      // Extract date from readProgress - Komga uses readDate field
+      const readDate = readProgress.readDate || readProgress.lastReadAt || readProgress.completedAt || null;
+      // Convert to Unix timestamp (seconds) for consistency with movies/TV shows
+      const dateTimestamp = readDate ? Math.floor(new Date(readDate).getTime() / 1000) : null;
       
       return {
         id: book.id,
@@ -177,7 +178,9 @@ async function generateStaticData() {
         bookTitle: book.name || book.metadata?.title || 'Unknown',
         bookNumber: book.number || book.metadata?.number || null,
         readProgress: readProgress,
-        watchDate: watchDate,
+        date: dateTimestamp, // Unix timestamp in seconds (for compatibility with movies/TV shows)
+        lastRead: readDate, // ISO string for component compatibility
+        watchDate: readDate ? new Date(readDate).toISOString() : null, // Keep for backward compatibility
         year: readDate ? new Date(readDate).getFullYear() : null,
         seriesMetadata: seriesInfo?.metadata || {},
         bookMetadata: book.metadata || {},

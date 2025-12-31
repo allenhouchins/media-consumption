@@ -184,20 +184,50 @@ function ComicBooksView({ onNavigate }) {
         // Process comic books
         const processedComics = comicData.map((comic) => {
           // Handle date - could be Unix timestamp or ISO string
+          // Check multiple possible date fields
           let readDate;
-          if (typeof comic.lastRead === 'number') {
+          if (typeof comic.date === 'number') {
+            // Unix timestamp in seconds (from fetch script)
+            readDate = new Date(comic.date * 1000);
+          } else if (typeof comic.lastRead === 'number') {
             readDate = new Date(comic.lastRead);
           } else if (typeof comic.lastRead === 'string') {
             readDate = new Date(comic.lastRead);
-          } else if (typeof comic.date === 'number') {
-            readDate = new Date(comic.date * 1000);
-          } else if (typeof comic.date === 'string') {
-            readDate = new Date(comic.date);
+          } else if (typeof comic.watchDate === 'string') {
+            readDate = new Date(comic.watchDate);
+          } else if (comic.readProgress?.readDate) {
+            // Fallback to readProgress.readDate
+            readDate = new Date(comic.readProgress.readDate);
+          } else if (comic.readProgress?.lastReadAt) {
+            readDate = new Date(comic.readProgress.lastReadAt);
+          } else if (comic.readProgress?.completedAt) {
+            readDate = new Date(comic.readProgress.completedAt);
           } else {
-            readDate = new Date();
+            // Only use today's date as last resort - log warning
+            console.warn(`No read date found for comic: ${comic.title || comic.seriesTitle || 'Unknown'}`);
+            readDate = null; // Set to null instead of today to avoid false dates
+          }
+          
+          // If we still don't have a valid date, skip this comic
+          if (!readDate || isNaN(readDate.getTime())) {
+            return null;
           }
           const watchYear = readDate.getFullYear();
-          const releaseYear = comic.year || comic.seriesMetadata?.releaseYear || null;
+          
+          // Extract issue release year from bookMetadata.releaseDate or parse from title
+          let issueReleaseYear = null;
+          if (comic.bookMetadata?.releaseDate) {
+            issueReleaseYear = new Date(comic.bookMetadata.releaseDate).getFullYear();
+          } else if (comic.bookTitle) {
+            // Try to extract year from title like "House of Slaughter 001 (2021)"
+            const yearMatch = comic.bookTitle.match(/\((\d{4})\)/);
+            if (yearMatch) {
+              issueReleaseYear = parseInt(yearMatch[1]);
+            }
+          }
+          
+          // Fallback to series release year if issue release year not available
+          const releaseYear = issueReleaseYear || comic.year || comic.seriesMetadata?.releaseYear || null;
           const comicTitle = comic.seriesTitle || comic.title || comic.name || 'Unknown';
           
           // Use the cover/thumbnail from Komga
@@ -217,15 +247,18 @@ function ComicBooksView({ onNavigate }) {
           return {
             ...comic,
             watchDate: readDate,
-            date: readDate.getTime(), // For sorting compatibility
+            date: Math.floor(readDate.getTime() / 1000), // Unix timestamp in seconds for sorting compatibility
             year: watchYear, // Keep watch year for filtering by watch date
-            releaseYear, // Preserve release year for filtering top 3 by release date
+            releaseYear, // Issue release year (or series release year as fallback)
+            issueReleaseYear, // Specific issue release year (null if not available)
+            readYear: watchYear, // Year the issue was read
             poster: posterUrl,
             title: comicTitle,
             rating_key: comic.seriesId || comic.id, // Use seriesId as rating_key for consistency
             seriesId: comic.seriesId || comic.id,
+            bookId: comic.id, // Keep book ID to track individual issues
           };
-        });
+        }).filter(comic => comic !== null); // Filter out comics with invalid dates
 
         // Sort by read date (most recent first)
         processedComics.sort((a, b) => b.date - a.date);
@@ -320,62 +353,53 @@ function ComicBooksView({ onNavigate }) {
     };
   }, [comics]);
 
-  // Get top 3 ranked comic books for a year (based on when they were read, not release year)
+  // Get top 3 ranked comic books for a year
+  // Only includes comics where: (1) an issue was released that year AND (2) that issue was read that year
   const getTop3ForYear = useMemo(() => {
     return (year) => {
       const targetYear = year === 'current' ? new Date().getFullYear() : parseInt(year);
       
-      // Create a map of read years by rating_key from all read data
-      // This tracks when each comic series was read (not when it was released)
-      const readYearsByRatingKey = new Map();
+      // Create a set of series (rating_key) that have at least one issue that meets both criteria:
+      // 1. Issue was released in the target year
+      // 2. Issue was read in the target year
+      const eligibleSeries = new Set();
       
-      // Check allReadData first (has all comics before deduplication)
+      // Check allReadData (has all individual issues before deduplication)
       if (allReadData && allReadData.length > 0) {
         allReadData.forEach(comic => {
           const key = comic.seriesId || comic.rating_key;
-          if (key) {
-            // Get the read year from watchDate or year field
-            const readYear = comic.watchDate ? comic.watchDate.getFullYear() : (comic.year || null);
-            if (readYear !== null && readYear !== undefined) {
-              // Keep the most recent read year for each series
-              const existing = readYearsByRatingKey.get(key);
-              if (!existing || readYear > existing) {
-                readYearsByRatingKey.set(key, readYear);
-              }
-            }
+          if (!key) return;
+          
+          // Get the read year
+          const readYear = comic.readYear || (comic.watchDate ? comic.watchDate.getFullYear() : (comic.year || null));
+          
+          // Get the issue release year - only use explicit issueReleaseYear, not series fallback
+          // We need to verify that a specific issue was released that year, not just the series
+          const issueReleaseYear = comic.issueReleaseYear !== null && comic.issueReleaseYear !== undefined 
+            ? comic.issueReleaseYear 
+            : null;
+          
+          // Both conditions must be met:
+          // 1. Issue was read in the target year
+          // 2. Issue was released in the target year (must have explicit issueReleaseYear)
+          if (readYear === targetYear && issueReleaseYear !== null && issueReleaseYear === targetYear) {
+            eligibleSeries.add(key);
           }
         });
       }
       
-      // Also check the deduplicated comics list as a fallback
-      if (comics && comics.length > 0) {
-        comics.forEach(comic => {
-          const key = comic.seriesId || comic.rating_key;
-          if (key) {
-            const readYear = comic.watchDate ? comic.watchDate.getFullYear() : (comic.year || null);
-            if (readYear !== null && readYear !== undefined) {
-              const existing = readYearsByRatingKey.get(key);
-              if (!existing || readYear > existing) {
-                readYearsByRatingKey.set(key, readYear);
-              }
-            }
-          }
-        });
-      }
-      
-      // Filter rankings to only include comics that were READ in this year, then take top 3
+      // Filter rankings to only include series that have at least one eligible issue, then take top 3
       const yearRankings = rankings
         .filter(r => {
           if (!r.rating_key) return false;
-          const readYear = readYearsByRatingKey.get(r.rating_key);
-          // Only include if we found a read year and it matches the target year
-          return readYear !== undefined && readYear === targetYear;
+          // Only include if the series has at least one issue that meets both criteria
+          return eligibleSeries.has(r.rating_key);
         })
         .slice(0, 3);
       
       return yearRankings;
     };
-  }, [rankings, comics, allReadData]);
+  }, [rankings, allReadData]);
 
   const getYearStats = useMemo(() => {
     // Pre-compute format function
