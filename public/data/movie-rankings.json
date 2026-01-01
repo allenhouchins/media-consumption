@@ -35,6 +35,13 @@
     "year": 2025
   },
   {
+    "rating_key": 16696,
+    "title": "One Battle After Another",
+    "poster": "/media-consumption/data/posters/16696.jpg",
+    "thumb": "/library/metadata/16696/thumb/1763035614",
+    "year": 2025
+  },
+  {
     "rating_key": 16146,
     "title": "Weapons",
     "poster": "/media-consumption/data/posters/16146.jpg",
@@ -47,6 +54,13 @@
     "poster": "/media-consumption/data/posters/2218.jpg",
     "thumb": "/library/metadata/2218/thumb/1722245790",
     "year": 2024
+  },
+  {
+    "rating_key": 17240,
+    "title": "Bugonia",
+    "poster": "/media-consumption/data/posters/17240.jpg",
+    "thumb": "/library/metadata/17240/thumb/1764122207",
+    "year": 2025
   },
   {
     "rating_key": 16659,
@@ -70,13 +84,6 @@
     "year": 2024
   },
   {
-    "rating_key": 17240,
-    "title": "Bugonia",
-    "poster": "/media-consumption/data/posters/17240.jpg",
-    "thumb": "/library/metadata/17240/thumb/1764122207",
-    "year": 2025
-  },
-  {
     "rating_key": 16578,
     "title": "Swiss Army Man",
     "poster": "/media-consumption/data/posters/16578.jpg",
@@ -88,13 +95,6 @@
     "title": "Oppenheimer",
     "poster": "/media-consumption/data/posters/272.jpg",
     "thumb": "/library/metadata/272/thumb/1763374205",
-    "year": 2025
-  },
-  {
-    "rating_key": 16696,
-    "title": "One Battle After Another",
-    "poster": "/media-consumption/data/posters/16696.jpg",
-    "thumb": "/library/metadata/16696/thumb/1763035614",
     "year": 2025
   },
   {
@@ -140,6 +140,13 @@
     "year": 2025
   },
   {
+    "rating_key": 14429,
+    "title": "The Invisible Man",
+    "poster": "/media-consumption/data/posters/14429.jpg",
+    "thumb": "/library/metadata/14429/thumb/1760951360",
+    "year": 2025
+  },
+  {
     "rating_key": 1428,
     "title": "Batman Begins",
     "poster": "/media-consumption/data/posters/1428.jpg",
@@ -151,13 +158,6 @@
     "title": "Sinners",
     "poster": "/media-consumption/data/posters/15277.jpg",
     "thumb": "/library/metadata/15277/thumb/1760002619",
-    "year": 2025
-  },
-  {
-    "rating_key": 14429,
-    "title": "The Invisible Man",
-    "poster": "/media-consumption/data/posters/14429.jpg",
-    "thumb": "/library/metadata/14429/thumb/1760951360",
     "year": 2025
   },
   {
@@ -182,6 +182,20 @@
     "year": 2025
   },
   {
+    "rating_key": 14588,
+    "title": "Nosferatu",
+    "poster": "/media-consumption/data/posters/14588.jpg",
+    "thumb": "/library/metadata/14588/thumb/1737508652",
+    "year": 2025
+  },
+  {
+    "rating_key": 15436,
+    "title": "The Phoenician Scheme",
+    "poster": "/media-consumption/data/posters/15436.jpg",
+    "thumb": "/library/metadata/15436/thumb/1751042787",
+    "year": 2025
+  },
+  {
     "rating_key": 15687,
     "title": "28 Years Later",
     "poster": "/media-consumption/data/posters/15687.jpg",
@@ -196,10 +210,10 @@
     "year": 2025
   },
   {
-    "rating_key": 13866,
-    "title": "Juror #2",
-    "poster": "/media-consumption/data/posters/13866.jpg",
-    "thumb": "/library/metadata/13866/thumb/1734422726",
+    "rating_key": 14146,
+    "title": "The Substance",
+    "poster": "/media-consumption/data/posters/14146.jpg",
+    "thumb": "/library/metadata/14146/thumb/1735114393",
     "year": 2024
   },
   {
@@ -210,17 +224,24 @@
     "year": 2025
   },
   {
-    "rating_key": 14146,
-    "title": "The Substance",
-    "poster": "/media-consumption/data/posters/14146.jpg",
-    "thumb": "/library/metadata/14146/thumb/1735114393",
-    "year": 2024
+    "rating_key": 15487,
+    "title": "Bring Her Back",
+    "poster": "/media-consumption/data/posters/15487.jpg",
+    "thumb": "/library/metadata/15487/thumb/1751503146",
+    "year": 2025
   },
   {
     "rating_key": 13839,
     "title": "Heretic",
     "poster": "/media-consumption/data/posters/13839.jpg",
     "thumb": "/library/metadata/13839/thumb/1733817982",
+    "year": 2024
+  },
+  {
+    "rating_key": 13866,
+    "title": "Juror #2",
+    "poster": "/media-consumption/data/posters/13866.jpg",
+    "thumb": "/library/metadata/13866/thumb/1734422726",
     "year": 2024
   },
   {
@@ -259,18 +280,18 @@
     "year": 2024
   },
   {
+    "rating_key": 15416,
+    "title": "Final Destination: Bloodlines",
+    "poster": "/media-consumption/data/posters/15416.jpg",
+    "thumb": "/library/metadata/15416/thumb/1759909247",
+    "year": 2025
+  },
+  {
     "rating_key": 13319,
     "title": "Don't Breathe",
     "poster": "/media-consumption/data/posters/13319.jpg",
     "thumb": "/library/metadata/13319/thumb/1729494198",
     "year": 2024
-  },
-  {
-    "rating_key": 13871,
-    "title": "Bad Santa",
-    "poster": "/media-consumption/data/posters/13871.jpg",
-    "thumb": "/library/metadata/13871/thumb/1763374621",
-    "year": 2025
   },
   {
     "rating_key": 17496,
@@ -294,10 +315,17 @@
     "year": 2025
   },
   {
-    "rating_key": 14312,
-    "title": "Wicked",
-    "poster": "/media-consumption/data/posters/14312.jpg",
-    "thumb": "/library/metadata/14312/thumb/1760779768",
+    "rating_key": 16673,
+    "title": "Roofman",
+    "poster": "/media-consumption/data/posters/16673.jpg",
+    "thumb": "/library/metadata/16673/thumb/1762838174",
+    "year": 2025
+  },
+  {
+    "rating_key": 14808,
+    "title": "Anora",
+    "poster": "/media-consumption/data/posters/14808.jpg",
+    "thumb": "/library/metadata/14808/thumb/1741055390",
     "year": 2025
   },
   {
@@ -308,10 +336,17 @@
     "year": 2024
   },
   {
-    "rating_key": 15416,
-    "title": "Final Destination: Bloodlines",
-    "poster": "/media-consumption/data/posters/15416.jpg",
-    "thumb": "/library/metadata/15416/thumb/1759909247",
+    "rating_key": 14312,
+    "title": "Wicked",
+    "poster": "/media-consumption/data/posters/14312.jpg",
+    "thumb": "/library/metadata/14312/thumb/1760779768",
+    "year": 2025
+  },
+  {
+    "rating_key": 13871,
+    "title": "Bad Santa",
+    "poster": "/media-consumption/data/posters/13871.jpg",
+    "thumb": "/library/metadata/13871/thumb/1763374621",
     "year": 2025
   },
   {
@@ -340,6 +375,13 @@
     "title": "The Fantastic Four: First Steps",
     "poster": "/media-consumption/data/posters/16266.jpg",
     "thumb": "/library/metadata/16266/thumb/1758611049",
+    "year": 2025
+  },
+  {
+    "rating_key": 16007,
+    "title": "Jurassic World: Rebirth",
+    "poster": "/media-consumption/data/posters/16007.jpg",
+    "thumb": "/library/metadata/16007/thumb/1754463735",
     "year": 2025
   },
   {
@@ -392,6 +434,13 @@
     "year": 2024
   },
   {
+    "rating_key": 15633,
+    "title": "Happy Gilmore 2",
+    "poster": "/media-consumption/data/posters/15633.jpg",
+    "thumb": "/library/metadata/15633/thumb/1753866781",
+    "year": 2025
+  },
+  {
     "rating_key": 13144,
     "title": "Beetlejuice Beetlejuice",
     "poster": "/media-consumption/data/posters/13144.jpg",
@@ -403,6 +452,13 @@
     "title": "The Toxic Avenger",
     "poster": "/media-consumption/data/posters/16304.jpg",
     "thumb": "/library/metadata/16304/thumb/1759209049",
+    "year": 2025
+  },
+  {
+    "rating_key": 15368,
+    "title": "Freaky Tales",
+    "poster": "/media-consumption/data/posters/15368.jpg",
+    "thumb": "/library/metadata/15368/thumb/1759224797",
     "year": 2025
   },
   {

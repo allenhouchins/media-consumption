@@ -42,13 +42,6 @@
     "year": 2025
   },
   {
-    "rating_key": 15620,
-    "title": "South Park",
-    "poster": "/media-consumption/data/posters/15620.jpg",
-    "thumb": "/library/metadata/16442/thumb/1761966024",
-    "year": 2025
-  },
-  {
     "rating_key": 16285,
     "title": "Marvel Zombies",
     "poster": "/media-consumption/data/posters/16285.jpg",
@@ -74,6 +67,13 @@
     "title": "I Think You Should Leave with Tim Robinson",
     "poster": "/media-consumption/data/posters/4276.jpg",
     "thumb": "/library/metadata/4277/thumb/1705503925",
+    "year": 2025
+  },
+  {
+    "rating_key": 15620,
+    "title": "South Park",
+    "poster": "/media-consumption/data/posters/15620.jpg",
+    "thumb": "/library/metadata/16442/thumb/1761966024",
     "year": 2025
   },
   {
@@ -126,6 +126,27 @@
     "year": 2024
   },
   {
+    "rating_key": 11645,
+    "title": "The Boys",
+    "poster": "/media-consumption/data/posters/11645.jpg",
+    "thumb": "/library/metadata/11900/thumb/1719732166",
+    "year": 2024
+  },
+  {
+    "rating_key": 15375,
+    "title": "The Outsider (2020)",
+    "poster": "/media-consumption/data/posters/15375.jpg",
+    "thumb": "/library/metadata/15376/thumb/1750224734",
+    "year": 2025
+  },
+  {
+    "rating_key": 4315,
+    "title": "Monster (2022)",
+    "poster": "/media-consumption/data/posters/4315.jpg",
+    "thumb": "/library/metadata/4315/thumb/1759049337",
+    "year": 2025
+  },
+  {
     "rating_key": 1445,
     "title": "Tim and Eric Awesome Show, Great Job!",
     "poster": "/media-consumption/data/posters/1445.jpg",
@@ -133,10 +154,17 @@
     "year": 2025
   },
   {
-    "rating_key": 15375,
-    "title": "The Outsider (2020)",
-    "poster": "/media-consumption/data/posters/15375.jpg",
-    "thumb": "/library/metadata/15376/thumb/1750224734",
+    "rating_key": 14031,
+    "title": "Arrested Development",
+    "poster": "/media-consumption/data/posters/14031.jpg",
+    "thumb": "/library/metadata/14093/thumb/1735006898",
+    "year": 2025
+  },
+  {
+    "rating_key": 9440,
+    "title": "Yellowjackets",
+    "poster": "/media-consumption/data/posters/9440.jpg",
+    "thumb": "/library/metadata/14736/thumb/1743924000",
     "year": 2025
   },
   {
@@ -158,13 +186,6 @@
     "title": "Very Important People (2023)",
     "poster": "/media-consumption/data/posters/14912.jpg",
     "thumb": "/library/metadata/17409/thumb/1765273050",
-    "year": 2025
-  },
-  {
-    "rating_key": 14031,
-    "title": "Arrested Development",
-    "poster": "/media-consumption/data/posters/14031.jpg",
-    "thumb": "/library/metadata/14093/thumb/1735006898",
     "year": 2025
   },
   {
@@ -203,6 +224,13 @@
     "year": 2024
   },
   {
+    "rating_key": 13550,
+    "title": "Family Guy",
+    "poster": "/media-consumption/data/posters/13550.jpg",
+    "thumb": "/library/metadata/14748/thumb/1739790061",
+    "year": 2025
+  },
+  {
     "rating_key": 4820,
     "title": "American Horror Story",
     "poster": "/media-consumption/data/posters/4820.jpg",
@@ -215,6 +243,13 @@
     "poster": "/media-consumption/data/posters/1148.jpg",
     "thumb": "/library/metadata/1149/thumb/1705135132",
     "year": 2024
+  },
+  {
+    "rating_key": 14642,
+    "title": "Tenacious D",
+    "poster": "/media-consumption/data/posters/14642.jpg",
+    "thumb": "/library/metadata/14642/thumb/1738467268",
+    "year": 2025
   },
   {
     "rating_key": 9635,
@@ -238,11 +273,32 @@
     "year": 2024
   },
   {
+    "rating_key": 12412,
+    "title": "Presumed Innocent",
+    "poster": "/media-consumption/data/posters/12412.jpg",
+    "thumb": "/library/metadata/12413/thumb/1721632871",
+    "year": 2024
+  },
+  {
+    "rating_key": 11932,
+    "title": "Defending Jacob",
+    "poster": "/media-consumption/data/posters/11932.jpg",
+    "thumb": "/library/metadata/11933/thumb/1718545954",
+    "year": 2024
+  },
+  {
     "rating_key": 11500,
     "title": "Vice Principals",
     "poster": "/media-consumption/data/posters/11500.jpg",
     "thumb": "/library/metadata/11501/thumb/1713568632",
     "year": 2024
+  },
+  {
+    "rating_key": 17557,
+    "title": "A Man on the Inside",
+    "poster": "/media-consumption/data/posters/17557.jpg",
+    "thumb": "/library/metadata/17558/thumb/1766367644",
+    "year": 2025
   },
   {
     "rating_key": 11622,
@@ -259,10 +315,24 @@
     "year": 2025
   },
   {
+    "rating_key": 12608,
+    "title": "Cowboy Cartel",
+    "poster": "/media-consumption/data/posters/12608.jpg",
+    "thumb": "/library/metadata/12609/thumb/1723056750",
+    "year": 2024
+  },
+  {
     "rating_key": 2290,
     "title": "Gold Rush",
     "poster": "/media-consumption/data/posters/2290.jpg",
     "thumb": "/library/metadata/16665/thumb/1762857117",
+    "year": 2025
+  },
+  {
+    "rating_key": 15675,
+    "title": "Bajillion Dollar Propertie$",
+    "poster": "/media-consumption/data/posters/15675.jpg",
+    "thumb": "/library/metadata/15675/thumb/1764233580",
     "year": 2025
   },
   {
@@ -271,13 +341,6 @@
     "poster": "/media-consumption/data/posters/9811.jpg",
     "thumb": "/library/metadata/9812/thumb/1707192923",
     "year": 2024
-  },
-  {
-    "rating_key": 15675,
-    "title": "Bajillion Dollar Propertie$",
-    "poster": "/media-consumption/data/posters/15675.jpg",
-    "thumb": "/library/metadata/15675/thumb/1764233580",
-    "year": 2025
   },
   {
     "rating_key": 17416,
