@@ -8332,6 +8332,90 @@
           }
         },
         {
+          "id": "0NZMPCCY61822",
+          "seriesId": "0NZMPCCXY1AQT",
+          "seriesTitle": "The Department of Truth (2020)",
+          "title": "The Department of Truth (2020)",
+          "bookTitle": "The Department of Truth 004 (2020)",
+          "bookNumber": 5,
+          "readProgress": {
+            "page": 28,
+            "completed": true,
+            "readDate": "2025-12-31T06:25:51Z",
+            "created": "2025-12-31T06:10:42Z",
+            "lastModified": "2025-12-31T06:25:51Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767162351,
+          "lastRead": "2025-12-31T06:25:51Z",
+          "watchDate": "2025-12-31T06:25:51.000Z",
+          "year": 2025,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "The Department of Truth",
+            "titleLock": false,
+            "titleSort": "The Department of Truth",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Image",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [
+              "crime",
+              "suspense",
+              "political"
+            ],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:39Z"
+          },
+          "bookMetadata": {
+            "title": "The Department of Truth 004 (2020)",
+            "titleLock": false,
+            "summary": "How can a journalist ethically report on a story that they know can’t possibly be true? As packages with proof of impossible stories keep arriving on one reporter’s doorstop, sent by a mysterious entity known only as Q, one reporter must find the answer themselves. JAMES TYNION IV (Something is Killing the Children) & MARTIN SIMMONDS (Dying is Easy) send the Department of Truth after the Fourth Estate.",
+            "summaryLock": false,
+            "number": "4",
+            "numberLock": false,
+            "numberSort": 4,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.comixology.com",
+                "url": "https://www.comixology.com/The-Department-of-Truth-4/digital-comic/894693"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:23Z"
+          }
+        },
+        {
           "id": "0NZMPCD1A1CGY",
           "seriesId": "0NZMPCD1A1CGX",
           "seriesTitle": "Wolverine - Revenge",
@@ -11533,12 +11617,87 @@
             "created": "2025-12-28T02:23:48Z",
             "lastModified": "2025-12-28T02:23:57Z"
           }
+        },
+        {
+          "id": "0P1JFCK45ZW7J",
+          "seriesId": "0P1JFCK41ZH7P",
+          "seriesTitle": "Ultimate Endgame (2026)",
+          "title": "Ultimate Endgame (2026)",
+          "bookTitle": "Ultimate Endgame 001 (2026) (Digital) (Shan-Empire)",
+          "bookNumber": 1,
+          "readProgress": {
+            "page": 32,
+            "completed": true,
+            "readDate": "2026-01-01T15:16:26Z",
+            "created": "2026-01-01T15:04:41Z",
+            "lastModified": "2026-01-01T15:16:26Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767280586,
+          "lastRead": "2026-01-01T15:16:26Z",
+          "watchDate": "2026-01-01T15:16:26.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "Ultimate Endgame (2026)",
+            "titleLock": false,
+            "titleSort": "Ultimate Endgame (2026)",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2026-01-01T03:40:27Z",
+            "lastModified": "2026-01-01T03:40:39Z"
+          },
+          "bookMetadata": {
+            "title": "Ultimate Endgame 001 (2026) (Digital) (Shan-Empire)",
+            "titleLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "number": "1",
+            "numberLock": false,
+            "numberSort": 1,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [],
+            "linksLock": false,
+            "created": "2026-01-01T03:40:28Z",
+            "lastModified": "2026-01-01T03:40:28Z"
+          }
         }
       ]
     }
   },
   "_metadata": {
-    "lastFetched": "2025-12-31T04:20:17.798Z",
-    "itemCount": 145
+    "lastFetched": "2026-01-01T15:16:56.481Z",
+    "itemCount": 147
   }
 }
