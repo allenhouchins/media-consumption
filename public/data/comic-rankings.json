@@ -102,21 +102,27 @@
     "year": 2025
   },
   {
+    "rating_key": "0P1SH74FXZVFM",
+    "title": "Predator Kills The Marvel Universe v1 (2025)",
+    "poster": "/data/covers/0P1SH74FXZVFM.jpg",
+    "year": 2026
+  },
+  {
     "rating_key": "0NZMPCCXA1FYG",
     "title": "Teenage Mutant Ninja Turtles - Casey Jones",
     "poster": "/media-consumption/data/covers/0NZMPCCXA1FYG.jpg",
     "year": 2025
   },
   {
-    "rating_key": "0NZMPCBKJ180B",
-    "title": "Hulk - Smash Everything (2025)",
-    "poster": "/media-consumption/data/covers/0NZMPCBKJ180B.jpg",
-    "year": 2025
-  },
-  {
     "rating_key": "0NZMPCD8J132R",
     "title": "Deadpool Kills the Marvel Universe One Last Time (2025)",
     "poster": "/media-consumption/data/covers/0NZMPCD8J132R.jpg",
+    "year": 2025
+  },
+  {
+    "rating_key": "0NZMPCBKJ180B",
+    "title": "Hulk - Smash Everything (2025)",
+    "poster": "/media-consumption/data/covers/0NZMPCBKJ180B.jpg",
     "year": 2025
   },
   {

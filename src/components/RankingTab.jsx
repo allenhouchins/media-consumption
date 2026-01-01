@@ -36,15 +36,31 @@ function RankingTab({ movies, contentType = 'movies' }) {
         let rankingsData = [];
         
         if (IS_DEV) {
-          // In development: load from backend API
+          // In development: try backend API first, fallback to static files
           const fetchStart = performance.now();
           const endpoint = contentType === 'tv' ? 'tv' : contentType === 'comics' ? 'comics' : 'movies';
-          const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
-          const fetchTime = performance.now() - fetchStart;
-          console.log(`[Rankings] API fetch took ${fetchTime.toFixed(2)}ms`);
-          
-          if (response.ok) {
-            rankingsData = await response.json();
+          try {
+            const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
+            const fetchTime = performance.now() - fetchStart;
+            console.log(`[Rankings] API fetch took ${fetchTime.toFixed(2)}ms`);
+            
+            if (response.ok) {
+              rankingsData = await response.json();
+            } else {
+              // API failed, try static files as fallback
+              throw new Error('API not available');
+            }
+          } catch (apiError) {
+            console.log(`[Rankings] API unavailable, falling back to static files:`, apiError.message);
+            // Fallback to static JSON file
+            const filename = contentType === 'tv' ? 'tv-rankings.json' : contentType === 'comics' ? 'comic-rankings.json' : 'movie-rankings.json';
+            const staticResponse = await fetch(`${STATIC_DATA_PATH}/${filename}`);
+            const staticFetchTime = performance.now() - fetchStart;
+            console.log(`[Rankings] Static file fetch took ${staticFetchTime.toFixed(2)}ms`);
+            
+            if (staticResponse.ok) {
+              rankingsData = await staticResponse.json();
+            }
           }
         } else {
           // In production: load from static JSON file
@@ -59,12 +75,20 @@ function RankingTab({ movies, contentType = 'movies' }) {
           }
         }
         
-        // Restore Date objects
+        // Restore Date objects and fix poster paths for dev mode
         const processStart = performance.now();
-        const restoredRankings = rankingsData.map(r => ({
-          ...r,
-          watchDate: r.watchDate ? new Date(r.watchDate) : new Date()
-        }));
+        const restoredRankings = rankingsData.map(r => {
+          // Fix poster paths: if poster starts with /media-consumption/ and we're in dev mode, remove it
+          let poster = r.poster;
+          if (IS_DEV && poster && poster.startsWith('/media-consumption/')) {
+            poster = poster.replace('/media-consumption', '');
+          }
+          return {
+            ...r,
+            poster,
+            watchDate: r.watchDate ? new Date(r.watchDate) : new Date()
+          };
+        });
         const processTime = performance.now() - processStart;
         console.log(`[Rankings] Processing took ${processTime.toFixed(2)}ms`);
         

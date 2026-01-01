@@ -147,6 +147,13 @@
     "year": 2025
   },
   {
+    "rating_key": 11818,
+    "title": "Mud",
+    "poster": "/data/posters/11818.jpg",
+    "thumb": "/library/metadata/11818/thumb/1717388852",
+    "year": 2024
+  },
+  {
     "rating_key": 1428,
     "title": "Batman Begins",
     "poster": "/media-consumption/data/posters/1428.jpg",
@@ -238,13 +245,6 @@
     "year": 2024
   },
   {
-    "rating_key": 13866,
-    "title": "Juror #2",
-    "poster": "/media-consumption/data/posters/13866.jpg",
-    "thumb": "/library/metadata/13866/thumb/1734422726",
-    "year": 2024
-  },
-  {
     "rating_key": 9970,
     "title": "Old",
     "poster": "/media-consumption/data/posters/9970.jpg",
@@ -252,10 +252,31 @@
     "year": 2024
   },
   {
+    "rating_key": 12761,
+    "title": "Prisoners",
+    "poster": "/data/posters/12761.jpg",
+    "thumb": "/library/metadata/12761/thumb/1725346969",
+    "year": 2024
+  },
+  {
+    "rating_key": 13866,
+    "title": "Juror #2",
+    "poster": "/media-consumption/data/posters/13866.jpg",
+    "thumb": "/library/metadata/13866/thumb/1734422726",
+    "year": 2024
+  },
+  {
     "rating_key": 14140,
     "title": "The Order",
     "poster": "/media-consumption/data/posters/14140.jpg",
     "thumb": "/library/metadata/14140/thumb/1735027534",
+    "year": 2024
+  },
+  {
+    "rating_key": 416,
+    "title": "Killers of the Flower Moon",
+    "poster": "/data/posters/416.jpg",
+    "thumb": "/library/metadata/416/thumb/1705381104",
     "year": 2024
   },
   {
@@ -336,6 +357,13 @@
     "year": 2024
   },
   {
+    "rating_key": 4900,
+    "title": "Walk Hard: The Dewey Cox Story",
+    "poster": "/data/posters/4900.jpg",
+    "thumb": "/library/metadata/4900/thumb/1705601044",
+    "year": 2024
+  },
+  {
     "rating_key": 14312,
     "title": "Wicked",
     "poster": "/media-consumption/data/posters/14312.jpg",
@@ -371,11 +399,25 @@
     "year": 2025
   },
   {
+    "rating_key": 12738,
+    "title": "The Accountant",
+    "poster": "/data/posters/12738.jpg",
+    "thumb": "/library/metadata/12738/thumb/1725346964",
+    "year": 2024
+  },
+  {
     "rating_key": 16266,
     "title": "The Fantastic Four: First Steps",
     "poster": "/media-consumption/data/posters/16266.jpg",
     "thumb": "/library/metadata/16266/thumb/1758611049",
     "year": 2025
+  },
+  {
+    "rating_key": 10882,
+    "title": "Road House",
+    "poster": "/data/posters/10882.jpg",
+    "thumb": "/library/metadata/10882/thumb/1711358864",
+    "year": 2024
   },
   {
     "rating_key": 16007,
@@ -390,6 +432,13 @@
     "poster": "/media-consumption/data/posters/16565.jpg",
     "thumb": "/library/metadata/16565/thumb/1762351498",
     "year": 2025
+  },
+  {
+    "rating_key": 12646,
+    "title": "Twisters",
+    "poster": "/data/posters/12646.jpg",
+    "thumb": "/library/metadata/12646/thumb/1723532559",
+    "year": 2024
   },
   {
     "rating_key": 17248,
@@ -508,6 +557,13 @@
     "title": "Argylle",
     "poster": "/media-consumption/data/posters/11594.jpg",
     "thumb": "/library/metadata/11594/thumb/1714613861",
+    "year": 2024
+  },
+  {
+    "rating_key": 13158,
+    "title": "Don't Look Now",
+    "poster": "/data/posters/13158.jpg",
+    "thumb": "/library/metadata/13158/thumb/1728492154",
     "year": 2024
   },
   {
