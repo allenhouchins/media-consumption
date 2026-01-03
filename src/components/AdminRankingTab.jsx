@@ -42,13 +42,26 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
         let rankingsData = [];
         
         if (IS_DEV) {
-          // In development: load from backend API
+          // In development: try backend API first, fallback to static files
           const endpoint = contentType === 'tv' ? 'tv' : contentType === 'comics' ? 'comics' : 'movies';
-          const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
-          if (response.ok) {
-            rankingsData = await response.json();
-          } else {
-            console.error(`[AdminRankingTab] Failed to load rankings: ${response.status}`);
+          try {
+            const response = await fetch(`${API_BASE_URL}/rankings/${endpoint}`);
+            if (response.ok) {
+              rankingsData = await response.json();
+            } else {
+              // API failed, try static files as fallback
+              throw new Error('API not available');
+            }
+          } catch (apiError) {
+            console.log(`[AdminRankingTab] API unavailable, falling back to static files:`, apiError.message);
+            // Fallback to static JSON file
+            const filename = contentType === 'tv' ? 'tv-rankings.json' : contentType === 'comics' ? 'comic-rankings.json' : 'movie-rankings.json';
+            const staticResponse = await fetch(`${STATIC_DATA_PATH}/${filename}`);
+            if (staticResponse.ok) {
+              rankingsData = await staticResponse.json();
+            } else {
+              console.error(`[AdminRankingTab] Failed to load rankings from static file: ${staticResponse.status}`);
+            }
           }
         } else {
           // In production: load from static JSON file
@@ -61,11 +74,19 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
           }
         }
         
-        // Restore Date objects and set rankings
-        const restoredRankings = rankingsData.map(r => ({
-          ...r,
-          watchDate: r.watchDate ? new Date(r.watchDate) : new Date()
-        }));
+        // Restore Date objects, fix poster paths for dev mode, and set rankings
+        const restoredRankings = rankingsData.map(r => {
+          // Fix poster paths: if poster starts with /media-consumption/ and we're in dev mode, remove it
+          let poster = r.poster;
+          if (IS_DEV && poster && poster.startsWith('/media-consumption/')) {
+            poster = poster.replace('/media-consumption', '');
+          }
+          return {
+            ...r,
+            poster,
+            watchDate: r.watchDate ? new Date(r.watchDate) : new Date()
+          };
+        });
         setRankings(restoredRankings);
       } catch (e) {
         console.error('Error loading rankings:', e);

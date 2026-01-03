@@ -63,6 +63,13 @@
     "year": 2025
   },
   {
+    "rating_key": 16053,
+    "title": "Superman",
+    "poster": "/media-consumption/data/posters/16053.jpg",
+    "thumb": "/library/metadata/16053/thumb/1755233332",
+    "year": 2025
+  },
+  {
     "rating_key": 16659,
     "title": "Frankenstein",
     "poster": "/media-consumption/data/posters/16659.jpg",
@@ -98,18 +105,18 @@
     "year": 2025
   },
   {
-    "rating_key": 16053,
-    "title": "Superman",
-    "poster": "/media-consumption/data/posters/16053.jpg",
-    "thumb": "/library/metadata/16053/thumb/1755233332",
-    "year": 2025
-  },
-  {
     "rating_key": 10154,
     "title": "Casino",
     "poster": "/media-consumption/data/posters/10154.jpg",
     "thumb": "/library/metadata/10154/thumb/1720516269",
     "year": 2024
+  },
+  {
+    "rating_key": 17503,
+    "title": "Paddington",
+    "poster": "/data/posters/17503.jpg",
+    "thumb": "/library/metadata/17503/thumb/1766021499",
+    "year": 2026
   },
   {
     "rating_key": 5646,
