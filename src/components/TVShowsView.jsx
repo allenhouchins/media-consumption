@@ -18,7 +18,8 @@ function TVShowsView({ onNavigate }) {
   const getInitialTab = () => {
     const params = new URLSearchParams(window.location.search);
     const tab = params.get('tab');
-    if (tab === 'ranking' || tab === 'admin') {
+    // Only allow 'ranking' or 'admin' tabs in dev mode
+    if ((tab === 'ranking' || tab === 'admin') && IS_DEV) {
       return tab;
     }
     if (tab) {
@@ -135,7 +136,8 @@ function TVShowsView({ onNavigate }) {
         // Set active tab from URL if valid, otherwise default
         const params = new URLSearchParams(window.location.search);
         const urlTab = params.get('tab');
-        if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
+        // Only allow 'ranking' or 'admin' tabs in dev mode
+        if (urlTab && ((urlTab === 'ranking' && IS_DEV) || (urlTab === 'admin' && IS_DEV) || cachedData.years.includes(parseInt(urlTab)))) {
           // URL tab is valid, keep it
           setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
         } else {
@@ -329,7 +331,8 @@ function TVShowsView({ onNavigate }) {
         // Set active tab from URL if valid, otherwise default
         const params = new URLSearchParams(window.location.search);
         const urlTab = params.get('tab');
-        if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || uniqueYears.includes(parseInt(urlTab)))) {
+        // Only allow 'ranking' or 'admin' tabs in dev mode
+        if (urlTab && ((urlTab === 'ranking' && IS_DEV) || (urlTab === 'admin' && IS_DEV) || uniqueYears.includes(parseInt(urlTab)))) {
           // URL tab is valid, keep it
           setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
         } else {
@@ -491,12 +494,14 @@ function TVShowsView({ onNavigate }) {
             </button>
           )
         ))}
-        <button
-          className={`tab ${activeTab === 'ranking' ? 'active' : ''}`}
-          onClick={() => setActiveTab('ranking')}
-        >
-          Rankings
-        </button>
+        {IS_DEV && (
+          <button
+            className={`tab ${activeTab === 'ranking' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ranking')}
+          >
+            Rankings
+          </button>
+        )}
         {IS_DEV && (
           <button
             className={`tab ${activeTab === 'admin' ? 'active' : ''}`}
@@ -508,7 +513,7 @@ function TVShowsView({ onNavigate }) {
       </div>
 
       <div className="tab-content">
-        {activeTab === 'ranking' ? (
+        {activeTab === 'ranking' && IS_DEV ? (
           <RankingTab movies={shows} contentType="tv" />
         ) : activeTab === 'admin' && IS_DEV ? (
           isAdminAuthenticated ? (

@@ -87,7 +87,30 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
             watchDate: r.watchDate ? new Date(r.watchDate) : new Date()
           };
         });
-        setRankings(restoredRankings);
+        
+        // Deduplicate by title (case-insensitive) - keep first occurrence
+        const deduplicatedRankings = [];
+        const seenTitles = new Set();
+        for (const ranking of restoredRankings) {
+          const normalizedTitle = ranking.title?.toLowerCase().trim();
+          if (normalizedTitle && !seenTitles.has(normalizedTitle)) {
+            seenTitles.add(normalizedTitle);
+            deduplicatedRankings.push(ranking);
+          } else if (!normalizedTitle) {
+            // Keep entries without titles (shouldn't happen, but be safe)
+            deduplicatedRankings.push(ranking);
+          }
+        }
+        
+        // If we removed duplicates, log a warning and save the deduplicated version
+        if (deduplicatedRankings.length < restoredRankings.length) {
+          const removedCount = restoredRankings.length - deduplicatedRankings.length;
+          console.warn(`[AdminRankingTab] Removed ${removedCount} duplicate(s) from rankings (by title)`);
+          // Auto-save the deduplicated version
+          saveRankings(deduplicatedRankings);
+        }
+        
+        setRankings(deduplicatedRankings);
       } catch (e) {
         console.error('Error loading rankings:', e);
         // Fallback to localStorage if server fails
@@ -194,8 +217,13 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
   const addToRankings = (movie) => {
     // Use functional update to ensure we have the latest rankings state
     setRankings(currentRankings => {
-      // Check if movie is already in rankings
-      if (currentRankings.some(r => r.rating_key === movie.rating_key)) {
+      // Check if movie is already in rankings by rating_key or title (case-insensitive)
+      const normalizedTitle = movie.title?.toLowerCase().trim();
+      if (currentRankings.some(r => {
+        return r.rating_key === movie.rating_key || 
+               (normalizedTitle && r.title?.toLowerCase().trim() === normalizedTitle);
+      })) {
+        console.warn(`[AdminRankingTab] Movie "${movie.title}" is already in rankings, skipping duplicate`);
         return currentRankings; // Don't add duplicates
       }
       
@@ -216,9 +244,28 @@ function AdminRankingTab({ movies, contentType = 'movies' }) {
   };
 
   const saveRankings = async (rankingsToSave) => {
+    // Deduplicate by title (case-insensitive) before saving - keep first occurrence
+    const seenTitles = new Set();
+    const deduplicatedRankings = [];
+    for (const ranking of rankingsToSave) {
+      const normalizedTitle = ranking.title?.toLowerCase().trim();
+      if (normalizedTitle && !seenTitles.has(normalizedTitle)) {
+        seenTitles.add(normalizedTitle);
+        deduplicatedRankings.push(ranking);
+      } else if (!normalizedTitle) {
+        // Keep entries without titles (shouldn't happen, but be safe)
+        deduplicatedRankings.push(ranking);
+      }
+    }
+    
+    if (deduplicatedRankings.length < rankingsToSave.length) {
+      const removedCount = rankingsToSave.length - deduplicatedRankings.length;
+      console.warn(`[AdminRankingTab] Removed ${removedCount} duplicate(s) before saving (by title)`);
+    }
+    
     // Strip down rankings to only essential fields before saving
     // Keep: rating_key (id), title, poster, thumb (poster thumb path), year
-    const minimalRankings = rankingsToSave.map(item => {
+    const minimalRankings = deduplicatedRankings.map(item => {
       const minimal = {
         rating_key: item.rating_key,
         title: item.title

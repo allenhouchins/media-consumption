@@ -18,7 +18,8 @@ function MoviesView({ onNavigate }) {
   const getInitialTab = () => {
     const params = new URLSearchParams(window.location.search);
     const tab = params.get('tab');
-    if (tab === 'ranking' || tab === 'admin') {
+    // Only allow 'ranking' or 'admin' tabs in dev mode
+    if ((tab === 'ranking' || tab === 'admin') && IS_DEV) {
       return tab;
     }
     if (tab) {
@@ -151,7 +152,8 @@ function MoviesView({ onNavigate }) {
               // Set active tab from URL if valid, otherwise default
               const params = new URLSearchParams(window.location.search);
               const urlTab = params.get('tab');
-              if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
+              // Only allow 'ranking' or 'admin' tabs in dev mode
+              if (urlTab && ((urlTab === 'ranking' && IS_DEV) || (urlTab === 'admin' && IS_DEV) || cachedData.years.includes(parseInt(urlTab)))) {
                 // URL tab is valid, keep it
                 setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
               } else {
@@ -179,7 +181,8 @@ function MoviesView({ onNavigate }) {
           // Set active tab from URL if valid, otherwise default
           const params = new URLSearchParams(window.location.search);
           const urlTab = params.get('tab');
-          if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || cachedData.years.includes(parseInt(urlTab)))) {
+          // Only allow 'ranking' or 'admin' tabs in dev mode
+          if (urlTab && ((urlTab === 'ranking' && IS_DEV) || (urlTab === 'admin' && IS_DEV) || cachedData.years.includes(parseInt(urlTab)))) {
             setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
           } else {
             const currentYear = new Date().getFullYear();
@@ -300,7 +303,41 @@ function MoviesView({ onNavigate }) {
         });
         
         // Convert back to array
-        const deduplicatedMovies = Array.from(moviesByRatingKey.values());
+        let deduplicatedMovies = Array.from(moviesByRatingKey.values());
+        
+        // Additional deduplication by title (case-insensitive) to handle movies with different rating_keys
+        // This handles cases where the same movie appears with different rating_keys (e.g., re-added to Plex)
+        const moviesByTitle = new Map();
+        deduplicatedMovies.forEach(movie => {
+          const normalizedTitle = movie.title?.toLowerCase().trim();
+          if (!normalizedTitle) {
+            // Keep entries without titles (shouldn't happen, but be safe)
+            moviesByTitle.set(movie.rating_key || `no-title-${Math.random()}`, movie);
+            return;
+          }
+          
+          const existing = moviesByTitle.get(normalizedTitle);
+          if (!existing) {
+            // First occurrence of this title
+            moviesByTitle.set(normalizedTitle, movie);
+          } else {
+            // Keep the one with the most recent watch date
+            const movieTime = movie.watchDate ? movie.watchDate.getTime() : (movie.date || 0);
+            const existingTime = existing.watchDate ? existing.watchDate.getTime() : (existing.date || 0);
+            if (movieTime > existingTime) {
+              moviesByTitle.set(normalizedTitle, movie);
+            }
+          }
+        });
+        
+        // Convert back to array
+        deduplicatedMovies = Array.from(moviesByTitle.values());
+        
+        // Log if duplicates were removed
+        if (deduplicatedMovies.length < Array.from(moviesByRatingKey.values()).length) {
+          const removedCount = Array.from(moviesByRatingKey.values()).length - deduplicatedMovies.length;
+          console.log(`[MoviesView] Removed ${removedCount} duplicate movie(s) by title`);
+        }
         
         // Sort again by watch date (most recent first)
         deduplicatedMovies.sort((a, b) => b.watchDate - a.watchDate);
@@ -327,7 +364,8 @@ function MoviesView({ onNavigate }) {
         // Set active tab from URL if valid, otherwise default
         const params = new URLSearchParams(window.location.search);
         const urlTab = params.get('tab');
-        if (urlTab && (urlTab === 'ranking' || urlTab === 'admin' || uniqueYears.includes(parseInt(urlTab)))) {
+        // Only allow 'ranking' or 'admin' tabs in dev mode
+        if (urlTab && ((urlTab === 'ranking' && IS_DEV) || (urlTab === 'admin' && IS_DEV) || uniqueYears.includes(parseInt(urlTab)))) {
           // URL tab is valid, keep it
           setActiveTab(urlTab === new Date().getFullYear().toString() ? 'current' : urlTab);
         } else {
@@ -502,12 +540,14 @@ function MoviesView({ onNavigate }) {
             </button>
           )
         ))}
-        <button
-          className={`tab ${activeTab === 'ranking' ? 'active' : ''}`}
-          onClick={() => setActiveTab('ranking')}
-        >
-          Rankings
-        </button>
+        {IS_DEV && (
+          <button
+            className={`tab ${activeTab === 'ranking' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ranking')}
+          >
+            Rankings
+          </button>
+        )}
         {IS_DEV && (
           <button
             className={`tab ${activeTab === 'admin' ? 'active' : ''}`}
@@ -519,7 +559,7 @@ function MoviesView({ onNavigate }) {
       </div>
 
       <div className="tab-content">
-        {activeTab === 'ranking' ? (
+        {activeTab === 'ranking' && IS_DEV ? (
           <RankingTab movies={movies} contentType="movies" />
         ) : activeTab === 'admin' && IS_DEV ? (
           isAdminAuthenticated ? (
