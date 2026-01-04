@@ -36,6 +36,12 @@
     "year": 2025
   },
   {
+    "rating_key": "0NZMPCDCJ19XD",
+    "title": "Absolute Wonder Woman (2024)",
+    "poster": "/data/covers/0NZMPCDCJ19XD.jpg",
+    "year": 2026
+  },
+  {
     "rating_key": "0NZMPCCXJ151K",
     "title": "Teenage Mutant Ninja Turtles - Shredder",
     "poster": "/data/covers/0NZMPCCXJ151K.jpg",
@@ -153,6 +159,18 @@
     "rating_key": "0P1XMEC51ZVGS",
     "title": "Astonishing Spider-Man - Infinity Comic",
     "poster": "/data/covers/0P1XMEC51ZVGS.jpg",
+    "year": 2026
+  },
+  {
+    "rating_key": "0NZMPCDBP1064",
+    "title": "1776 (2025)",
+    "poster": "/data/covers/0NZMPCDBP1064.jpg",
+    "year": 2026
+  },
+  {
+    "rating_key": "0NZXQBX39C0S4",
+    "title": "DC-Marvel - Batman-Deadpool (2025)",
+    "poster": "/data/covers/0NZXQBX39C0S4.jpg",
     "year": 2026
   }
 ]
