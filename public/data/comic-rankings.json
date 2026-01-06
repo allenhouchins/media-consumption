@@ -24,6 +24,12 @@
     "year": 2025
   },
   {
+    "rating_key": "0NZMPCDCJ19XD",
+    "title": "Absolute Wonder Woman (2024)",
+    "poster": "/data/covers/0NZMPCDCJ19XD.jpg",
+    "year": 2026
+  },
+  {
     "rating_key": "0NZMPCCXY1AQT",
     "title": "The Department of Truth (2020)",
     "poster": "/data/covers/0NZMPCCXY1AQT.jpg",
@@ -34,12 +40,6 @@
     "title": "Wolverine - Old Man Logan (2010)",
     "poster": "/data/covers/0NZXQBX41CBS3.jpg",
     "year": 2025
-  },
-  {
-    "rating_key": "0NZMPCDCJ19XD",
-    "title": "Absolute Wonder Woman (2024)",
-    "poster": "/data/covers/0NZMPCDCJ19XD.jpg",
-    "year": 2026
   },
   {
     "rating_key": "0NZMPCCXJ151K",
@@ -147,6 +147,12 @@
     "rating_key": "0P1JFCK41ZH7P",
     "title": "Ultimate Endgame (2026)",
     "poster": "/data/covers/0P1JFCK41ZH7P.jpg",
+    "year": 2026
+  },
+  {
+    "rating_key": "0NZMPCDBE18N5",
+    "title": "The Will of Doom (2025)",
+    "poster": "/data/covers/0NZMPCDBE18N5.jpg",
     "year": 2026
   },
   {
