@@ -6490,6 +6490,166 @@
           }
         },
         {
+          "id": "0NZMPCCW6103N",
+          "seriesId": "0NZMPCCW6103M",
+          "seriesTitle": "Star Wars - Darth Maul - Black, White & Red (2024)",
+          "title": "Star Wars - Darth Maul - Black, White & Red (2024)",
+          "bookTitle": "Star Wars - Darth Maul - Black, White & Red 001 (2024)",
+          "bookNumber": 1,
+          "readProgress": {
+            "page": 33,
+            "completed": true,
+            "readDate": "2026-01-07T05:36:29Z",
+            "created": "2026-01-07T05:36:29Z",
+            "lastModified": "2026-01-07T05:36:29Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767764189,
+          "lastRead": "2026-01-07T05:36:29Z",
+          "watchDate": "2026-01-07T05:36:29.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "Star Wars: Darth Maul - Black, White & Red (2024)",
+            "titleLock": false,
+            "titleSort": "Star Wars: Darth Maul - Black, White & Red (2024)",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Marvel",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:38Z"
+          },
+          "bookMetadata": {
+            "title": "Star Wars - Darth Maul - Black, White & Red 001 (2024)",
+            "titleLock": false,
+            "summary": "DARTH MAUL STARS IN HIS VERY OWN HORROR BLOCKBUSTER! A prison ship - transporting a cult known as the FINAL OCCULTATION - goes offline, and DARTH MAUL is sent by PALPATINE to investigate. What he finds on board is the stuff of nightmares!!! It's up to him to stop this profoundly dark and unstable force that wishes to bring chaos to the galaxy.",
+            "summaryLock": false,
+            "number": "1",
+            "numberLock": false,
+            "numberSort": 1,
+            "numberSortLock": false,
+            "releaseDate": "2024-06-01",
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.amazon.com",
+                "url": "https://www.amazon.com/dp/B0CTNQL5W5"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:22Z"
+          }
+        },
+        {
+          "id": "0NZMPCCWA1FCG",
+          "seriesId": "0NZMPCCW6103M",
+          "seriesTitle": "Star Wars - Darth Maul - Black, White & Red (2024)",
+          "title": "Star Wars - Darth Maul - Black, White & Red (2024)",
+          "bookTitle": "Star Wars - Darth Maul - Black, White & Red 002 (2024)",
+          "bookNumber": 2,
+          "readProgress": {
+            "page": 32,
+            "completed": true,
+            "readDate": "2026-01-08T03:55:51Z",
+            "created": "2026-01-08T03:55:51Z",
+            "lastModified": "2026-01-08T03:55:51Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767844551,
+          "lastRead": "2026-01-08T03:55:51Z",
+          "watchDate": "2026-01-08T03:55:51.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "Star Wars: Darth Maul - Black, White & Red (2024)",
+            "titleLock": false,
+            "titleSort": "Star Wars: Darth Maul - Black, White & Red (2024)",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Marvel",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:38Z"
+          },
+          "bookMetadata": {
+            "title": "Star Wars - Darth Maul - Black, White & Red 002 (2024)",
+            "titleLock": false,
+            "summary": "MAYHEM AT THE MOONBENDER COLONY! Who are THE REMAINDERS, and what threat are they to LORD PALPATINE? DARTH MAUL is sent to conquer a mining colony single-handed, but the unexpected opposition becomes an intense battle of life and death! One of STAR WARS' most famous villains learns one of his most valuable lessons!",
+            "summaryLock": false,
+            "number": "2",
+            "numberLock": false,
+            "numberSort": 2,
+            "numberSortLock": false,
+            "releaseDate": "2024-07-01",
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.amazon.com",
+                "url": "https://www.amazon.com/dp/B0CWPP7TGZ"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:22Z"
+          }
+        },
+        {
           "id": "0NZMPCCWE13D7",
           "seriesId": "0NZMPCCWE13D6",
           "seriesTitle": "Absolute Batman (2024)",
@@ -6539,7 +6699,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 002 (2025)",
@@ -6561,7 +6721,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6614,7 +6774,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 001 (2024)",
@@ -6636,7 +6796,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6689,7 +6849,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 003 (2025)",
@@ -6711,7 +6871,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6764,7 +6924,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 009 (2025)",
@@ -6786,7 +6946,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6839,7 +6999,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 004 (2025)",
@@ -6861,7 +7021,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6914,7 +7074,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 005 (2025)",
@@ -6936,7 +7096,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -6989,7 +7149,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 006 (2025)",
@@ -7011,7 +7171,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7064,7 +7224,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 007 (2025)",
@@ -7086,7 +7246,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7139,7 +7299,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 008 (2025)",
@@ -7161,7 +7321,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7214,7 +7374,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 010 (2025)",
@@ -7236,7 +7396,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7289,7 +7449,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 011 (2025)",
@@ -7311,7 +7471,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7364,7 +7524,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 012 (2025)",
@@ -7386,7 +7546,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7439,7 +7599,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 013 (2025)",
@@ -7461,7 +7621,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7514,7 +7674,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 014 (2026)",
@@ -7536,7 +7696,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -7589,7 +7749,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:38Z"
+            "lastModified": "2026-01-09T01:28:33Z"
           },
           "bookMetadata": {
             "title": "Absolute Batman 015 (2026)",
@@ -7611,7 +7771,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-09T01:28:25Z"
           }
         },
         {
@@ -8408,6 +8568,258 @@
               {
                 "label": "www.comixology.com",
                 "url": "https://www.comixology.com/The-Department-of-Truth-4/digital-comic/894693"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:23Z"
+          }
+        },
+        {
+          "id": "0NZMPCCY61823",
+          "seriesId": "0NZMPCCXY1AQT",
+          "seriesTitle": "The Department of Truth (2020)",
+          "title": "The Department of Truth (2020)",
+          "bookTitle": "The Department of Truth 005 (2021)",
+          "bookNumber": 6,
+          "readProgress": {
+            "page": 32,
+            "completed": true,
+            "readDate": "2026-01-07T05:27:55Z",
+            "created": "2026-01-07T05:27:55Z",
+            "lastModified": "2026-01-07T05:27:55Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767763675,
+          "lastRead": "2026-01-07T05:27:55Z",
+          "watchDate": "2026-01-07T05:27:55.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "The Department of Truth",
+            "titleLock": false,
+            "titleSort": "The Department of Truth",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Image",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [
+              "crime",
+              "suspense",
+              "political"
+            ],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:39Z"
+          },
+          "bookMetadata": {
+            "title": "The Department of Truth 005 (2021)",
+            "titleLock": false,
+            "summary": "WHAT is Black Hat? WHO is the mysterious man pulling its strings? WHY is he in Cole Turner’s apartment? The first arc of the smash-hit new series from JAMES TYNION IV (Batman) & MARTIN SIMMONDS (Dying is Easy) comes to a dramatic conclusion, as Cole questions whether or not he’s on the right side of the War for the Truth!",
+            "summaryLock": false,
+            "number": "5",
+            "numberLock": false,
+            "numberSort": 5,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.comixology.com",
+                "url": "https://www.comixology.com/The-Department-of-Truth-5/digital-comic/900896"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:23Z"
+          }
+        },
+        {
+          "id": "0NZMPCCYA1D1E",
+          "seriesId": "0NZMPCCXY1AQT",
+          "seriesTitle": "The Department of Truth (2020)",
+          "title": "The Department of Truth (2020)",
+          "bookTitle": "The Department of Truth 006 (2021)",
+          "bookNumber": 7,
+          "readProgress": {
+            "page": 33,
+            "completed": true,
+            "readDate": "2026-01-08T04:08:54Z",
+            "created": "2026-01-08T04:08:54Z",
+            "lastModified": "2026-01-08T04:08:54Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767845334,
+          "lastRead": "2026-01-08T04:08:54Z",
+          "watchDate": "2026-01-08T04:08:54.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "The Department of Truth",
+            "titleLock": false,
+            "titleSort": "The Department of Truth",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Image",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [
+              "crime",
+              "suspense",
+              "political"
+            ],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:39Z"
+          },
+          "bookMetadata": {
+            "title": "The Department of Truth 006 (2021)",
+            "titleLock": false,
+            "summary": "Acclaimed artist ELSA CHARRETIER (NOVEMBER) joins JAMES TYNION IV (Batman) and THE DEPARTMENT OF TRUTH to uncover the deep tangled roots of the Department of Truth—roots that stretch as far back as the Middle Ages. What is the Inquisition? Who are the Illuminati? And what is the truth behind the Phantom Time Hypothesis?",
+            "summaryLock": false,
+            "number": "6",
+            "numberLock": false,
+            "numberSort": 6,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.comixology.com",
+                "url": "https://www.comixology.com/The-Department-of-Truth-6/digital-comic/907755"
+              }
+            ],
+            "linksLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:30:23Z"
+          }
+        },
+        {
+          "id": "0NZMPCCYA1D1F",
+          "seriesId": "0NZMPCCXY1AQT",
+          "seriesTitle": "The Department of Truth (2020)",
+          "title": "The Department of Truth (2020)",
+          "bookTitle": "The Department of Truth 007 (2021)",
+          "bookNumber": 8,
+          "readProgress": {
+            "page": 34,
+            "completed": true,
+            "readDate": "2026-01-08T04:20:45Z",
+            "created": "2026-01-08T04:20:45Z",
+            "lastModified": "2026-01-08T04:20:45Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767846045,
+          "lastRead": "2026-01-08T04:20:45Z",
+          "watchDate": "2026-01-08T04:20:45.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "The Department of Truth",
+            "titleLock": false,
+            "titleSort": "The Department of Truth",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "Image",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "en",
+            "languageLock": false,
+            "genres": [
+              "crime",
+              "suspense",
+              "political"
+            ],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2025-12-28T06:31:39Z"
+          },
+          "bookMetadata": {
+            "title": "The Department of Truth 007 (2021)",
+            "titleLock": false,
+            "summary": "It's another deep dive into the Secret Archives as guest artist TYLER BOSS (4 Kids Walk Into a Bank) joins JAMES TYNION IV (Batman) and THE DEPARTMENT OF TRUTH to investigate sightings of flying saucers...and the strange men in black suits trying to cover up their existence. Hold onto your cows—the truth is out there!",
+            "summaryLock": false,
+            "number": "7",
+            "numberLock": false,
+            "numberSort": 7,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [
+              {
+                "label": "www.comixology.com",
+                "url": "https://www.comixology.com/The-Department-of-Truth-7/digital-comic/914048"
               }
             ],
             "linksLock": false,
@@ -9700,15 +10112,15 @@
           "readProgress": {
             "page": 44,
             "completed": true,
-            "readDate": "2026-01-06T05:22:06Z",
+            "readDate": "2026-01-06T17:26:16Z",
             "created": "2026-01-06T05:22:06Z",
-            "lastModified": "2026-01-06T05:22:06Z",
+            "lastModified": "2026-01-06T17:26:16Z",
             "deviceId": "",
             "deviceName": ""
           },
-          "date": 1767676926,
-          "lastRead": "2026-01-06T05:22:06Z",
-          "watchDate": "2026-01-06T05:22:06.000Z",
+          "date": 1767720376,
+          "lastRead": "2026-01-06T17:26:16Z",
+          "watchDate": "2026-01-06T17:26:16.000Z",
           "year": 2026,
           "seriesMetadata": {
             "status": "ONGOING",
@@ -9815,7 +10227,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:49Z",
-            "lastModified": "2025-12-28T06:31:40Z"
+            "lastModified": "2026-01-09T03:28:25Z"
           },
           "bookMetadata": {
             "title": "1776 002 (2026) (Digital) (Shan-Empire)",
@@ -9837,7 +10249,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:49Z",
-            "lastModified": "2025-12-27T01:49:40Z"
+            "lastModified": "2026-01-09T03:28:25Z"
           }
         },
         {
@@ -9890,7 +10302,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:49Z",
-            "lastModified": "2025-12-28T06:31:40Z"
+            "lastModified": "2026-01-09T03:28:25Z"
           },
           "bookMetadata": {
             "title": "1776 001 (2026) (Digital) (Shan-Empire)",
@@ -9912,7 +10324,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:49Z",
-            "lastModified": "2025-12-27T01:49:40Z"
+            "lastModified": "2026-01-09T03:28:24Z"
           }
         },
         {
@@ -16231,7 +16643,7 @@
     }
   },
   "_metadata": {
-    "lastFetched": "2026-01-06T05:23:46.397Z",
-    "itemCount": 207
+    "lastFetched": "2026-01-09T05:25:08.429Z",
+    "itemCount": 212
   }
 }
