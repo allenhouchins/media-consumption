@@ -2491,7 +2491,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:47Z",
-            "lastModified": "2025-12-28T06:31:35Z"
+            "lastModified": "2026-01-11T00:28:31Z"
           },
           "bookMetadata": {
             "title": "I Saw Santa 001 (2025)",
@@ -2513,7 +2513,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:47Z",
-            "lastModified": "2025-12-27T01:49:38Z"
+            "lastModified": "2026-01-11T00:28:24Z"
           }
         },
         {
@@ -8064,7 +8064,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:39Z"
+            "lastModified": "2026-01-10T00:28:29Z"
           },
           "bookMetadata": {
             "title": "Teenage Mutant Ninja Turtles - Shredder 001 (2025)",
@@ -8086,7 +8086,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-10T00:28:26Z"
           }
         },
         {
@@ -8139,7 +8139,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:39Z"
+            "lastModified": "2026-01-10T00:28:29Z"
           },
           "bookMetadata": {
             "title": "Teenage Mutant Ninja Turtles - Shredder 002 (2025)",
@@ -8161,7 +8161,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-10T00:28:26Z"
           }
         },
         {
@@ -8214,7 +8214,7 @@
             "alternateTitles": [],
             "alternateTitlesLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-28T06:31:39Z"
+            "lastModified": "2026-01-10T00:28:29Z"
           },
           "bookMetadata": {
             "title": "Teenage Mutant Ninja Turtles - Shredder 003 (2025)",
@@ -8236,7 +8236,7 @@
             "links": [],
             "linksLock": false,
             "created": "2025-12-26T03:42:48Z",
-            "lastModified": "2025-12-27T01:49:39Z"
+            "lastModified": "2026-01-10T00:28:26Z"
           }
         },
         {
@@ -16638,12 +16638,237 @@
             "created": "2026-01-02T05:40:27Z",
             "lastModified": "2026-01-02T05:40:27Z"
           }
+        },
+        {
+          "id": "0P43XWFHZFYAJ",
+          "seriesId": "0NZMPCCWE13D6",
+          "seriesTitle": "Absolute Batman (2024)",
+          "title": "Absolute Batman (2024)",
+          "bookTitle": "Absolute Batman 2025 Annual 001 (2025) (Digital) (Shan-Empire)",
+          "bookNumber": 16,
+          "readProgress": {
+            "page": 50,
+            "completed": true,
+            "readDate": "2026-01-09T05:56:00Z",
+            "created": "2026-01-09T05:56:00Z",
+            "lastModified": "2026-01-09T05:56:00Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1767938160,
+          "lastRead": "2026-01-09T05:56:00Z",
+          "watchDate": "2026-01-09T05:56:00.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "Absolute Batman (2024)",
+            "titleLock": false,
+            "titleSort": "Absolute Batman (2024)",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2026-01-09T01:28:33Z"
+          },
+          "bookMetadata": {
+            "title": "Absolute Batman 2025 Annual 001 (2025) (Digital) (Shan-Empire)",
+            "titleLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "number": "16",
+            "numberLock": false,
+            "numberSort": 16,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [],
+            "linksLock": false,
+            "created": "2026-01-09T01:28:24Z",
+            "lastModified": "2026-01-09T01:28:25Z"
+          }
+        },
+        {
+          "id": "0P4DSQX9FFG41",
+          "seriesId": "0NZMPCCXJ151K",
+          "seriesTitle": "Teenage Mutant Ninja Turtles - Shredder",
+          "title": "Teenage Mutant Ninja Turtles - Shredder",
+          "bookTitle": "Teenage Mutant Ninja Turtles - Shredder 004 (2026) (digital) (Raphael-Empire)",
+          "bookNumber": 4,
+          "readProgress": {
+            "page": 30,
+            "completed": true,
+            "readDate": "2026-01-11T04:59:38Z",
+            "created": "2026-01-11T04:59:38Z",
+            "lastModified": "2026-01-11T04:59:38Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1768107578,
+          "lastRead": "2026-01-11T04:59:38Z",
+          "watchDate": "2026-01-11T04:59:38.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "Teenage Mutant Ninja Turtles - Shredder",
+            "titleLock": false,
+            "titleSort": "Teenage Mutant Ninja Turtles - Shredder",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:48Z",
+            "lastModified": "2026-01-10T00:28:29Z"
+          },
+          "bookMetadata": {
+            "title": "Teenage Mutant Ninja Turtles - Shredder 004 (2026) (digital) (Raphael-Empire)",
+            "titleLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "number": "4",
+            "numberLock": false,
+            "numberSort": 4,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [],
+            "linksLock": false,
+            "created": "2026-01-10T00:28:24Z",
+            "lastModified": "2026-01-10T00:28:26Z"
+          }
+        },
+        {
+          "id": "0P4R3AQHZFW0N",
+          "seriesId": "0NZMPCBKA1B2F",
+          "seriesTitle": "I Saw Santa (2025)",
+          "title": "I Saw Santa (2025)",
+          "bookTitle": "I Saw Santa 002 (2025) (3 covers) (Digital-Empire)",
+          "bookNumber": 2,
+          "readProgress": {
+            "page": 51,
+            "completed": true,
+            "readDate": "2026-01-11T04:52:06Z",
+            "created": "2026-01-11T04:52:06Z",
+            "lastModified": "2026-01-11T04:52:06Z",
+            "deviceId": "",
+            "deviceName": ""
+          },
+          "date": 1768107126,
+          "lastRead": "2026-01-11T04:52:06Z",
+          "watchDate": "2026-01-11T04:52:06.000Z",
+          "year": 2026,
+          "seriesMetadata": {
+            "status": "ONGOING",
+            "statusLock": false,
+            "title": "I Saw Santa (2025)",
+            "titleLock": false,
+            "titleSort": "I Saw Santa (2025)",
+            "titleSortLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "readingDirection": "",
+            "readingDirectionLock": false,
+            "publisher": "",
+            "publisherLock": false,
+            "ageRating": null,
+            "ageRatingLock": false,
+            "language": "",
+            "languageLock": false,
+            "genres": [],
+            "genresLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "totalBookCount": null,
+            "totalBookCountLock": false,
+            "sharingLabels": [],
+            "sharingLabelsLock": false,
+            "links": [],
+            "linksLock": false,
+            "alternateTitles": [],
+            "alternateTitlesLock": false,
+            "created": "2025-12-26T03:42:47Z",
+            "lastModified": "2026-01-11T00:28:31Z"
+          },
+          "bookMetadata": {
+            "title": "I Saw Santa 002 (2025) (3 covers) (Digital-Empire)",
+            "titleLock": false,
+            "summary": "",
+            "summaryLock": false,
+            "number": "2",
+            "numberLock": false,
+            "numberSort": 2,
+            "numberSortLock": false,
+            "releaseDate": null,
+            "releaseDateLock": false,
+            "authors": [],
+            "authorsLock": false,
+            "tags": [],
+            "tagsLock": false,
+            "isbn": "",
+            "isbnLock": false,
+            "links": [],
+            "linksLock": false,
+            "created": "2026-01-11T00:28:24Z",
+            "lastModified": "2026-01-11T00:28:24Z"
+          }
         }
       ]
     }
   },
   "_metadata": {
-    "lastFetched": "2026-01-09T05:25:08.429Z",
-    "itemCount": 212
+    "lastFetched": "2026-01-11T23:13:42.267Z",
+    "itemCount": 215
   }
 }
